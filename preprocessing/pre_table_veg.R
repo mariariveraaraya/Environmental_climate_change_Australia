@@ -1,3 +1,4 @@
+# Table to use in background section
 
 period<-c("33-20.6 ka", "20.6 - 18.7 ka")
 
