@@ -1,0 +1,17 @@
+## Ran on Thu Mar 12 15:47:46 2020 
+
+Cal 0 : ConstCal;
+Cal 1 : IntCal13, 0;
+Cal 2 : Marine13;
+Cal 3 : SHCal13, 0;
+
+##   id.   yr    std   depth  delta.R  delta.STD     t.a   t.b   cc
+Det 0 : NA ,  4285,  16270000,  0,  0,  0,  3,  4,  3;
+Det 1 : OZX765 , 4285, 30, 6;
+Det 2 : OZX766 , 7875, 40, 43;
+Det 3 : OZX767 , 10045, 50, 67;
+Det 4 : OZX768 , 15560, 90, 137;
+Det 5 : OZX769 , 16270, 70, 146;
+
+##		 K   MinYr   MaxYr   th0   th0p   w.a   w.b   alpha  beta  dmin  dmax
+Bacon 0: FixT, 30,  -70,  1e+06,  4227,  4274,  2.8,  1.2,  1.5,  0.015, 0, 146;

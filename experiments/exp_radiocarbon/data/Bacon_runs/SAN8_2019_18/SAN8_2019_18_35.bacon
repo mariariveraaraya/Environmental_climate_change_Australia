@@ -1,0 +1,26 @@
+## Ran on Mon Apr 27 12:02:46 2020 
+
+Cal 0 : ConstCal;
+Cal 1 : IntCal13, 0;
+Cal 2 : Marine13;
+Cal 3 : SHCal13, 0;
+
+##   id.   age    std   depth  delta.R  delta.STD     t.a   t.b   cc
+Det 0 : NA ,  2270,  27100000,  0,  0,  0,  3,  4,  1;
+Det 1 : OZY416 , 2270, 70, 3;
+Det 2 : OZX672 , 3840, 45, 6;
+Det 3 : OZY417 , 4230, 70, 12.5;
+Det 4 : OZY418 , 7140, 80, 23;
+Det 5 : OZY333 , 6435, 30, 32;
+Det 6 : OZX673 , 8660, 40, 43;
+Det 7 : OZX674 , 15240, 60, 67;
+Det 8 : OZY420 , 17670, 160, 76;
+Det 9 : OZY421 , 19450, 80, 90;
+Det 10 : OZY422 , 18350, 170, 105;
+Det 11 : OZX675 , 24340, 190, 137;
+Det 12 : OZX676 , 26290, 260, 146;
+Det 13 : OZX677 , 27100, 140, 162;
+Det 14 : NA , 27100, 2.71e+10, 172.2;
+
+##		 K   MinAge   MaxAge   th0   th0p   w.a   w.b   alpha  beta  dmin  dmax
+Bacon 0: FixT, 35,  -70,  1e+06,  2254,  2379,  2.8,  1.2,  1.5,  0.0075, 0, 175;

@@ -1,0 +1,328 @@
+Identifier,Type,Genus,Species,Counts,Morphotype,Morphotype_b
+0,Diatom,Pinnularia,stomatophora,224,,
+0,Diatom,Brachysira ,brebissonii,137,,
+0,Diatom,Eunotia,musicola,4,,
+0,Diatom,Eunotia,naegelii,1,,
+0,Diatom,Pinnularia,viridiformis,10,,
+0,Diatom,Eunotia,arcus,15,,
+0.1,Diatom,Pinnularia,stomatophora,22,,
+0.1,Diatom,Brachysira ,brebissonii,300,,
+0.1,Diatom,Eunotia,arcus,5,,
+0.1,Diatom,Eunotia,musicola,5,,
+0.1,Diatom,Caloneis,,6,,
+0.1,Diatom,Surirella,spiralis,1,,
+0.1,Diatom,Pinnularia,viridiformis,8,,
+0.1,Spicules,Porifera,,18,,
+26.5,Diatom,Pinnularia,stomatophora,122,,
+26.5,Diatom,Pinnularia,viridiformis,55,,
+26.5,Diatom,Frustulia ,rhomboides,49,,
+26.5,Diatom,Brachysira ,brebissonii,19,,
+26.5,Diatom,Eunotia,arcus,18,,
+26.5,Diatom,Caloneis,,28,,
+26.5,Diatom,Eunotia,musicola,19,,
+26.5,Diatom,Surirella,spiralis,1,,
+26.5,Diatom,Eunotia,pirla,1,,
+26.5,Spicules,Porifera,,14,,
+26.5,Phytoliths,,,26,Globular,granulate
+28,Diatom,Pinnularia,stomatophora,99,,
+28,Diatom,Frustulia ,rhomboides,246,,
+28,Diatom,Eunotia,arcus,59,,
+28,Diatom,Eunotia,musicola,13,,
+28,Diatom,Eunotia,naegelii,1,,
+28,Diatom,Caloneis,999,38,,
+28,Diatom,Pinnularia,viridiformis,138,,
+28,Spicule,Porifera,,57,,
+28,Diatom,Brachysira ,brebissonii,30,,
+28,Phytoliths,,,11,Globular,granulate
+28,Phytoliths,,,3,Elongate,
+28,Phytoliths,Monocot,,1,cylindroid,
+29.5,Diatom,Caloneis,,24,,
+29.5,Diatom,Frustulia ,rhomboides,17,,
+29.5,Diatom,Pinnularia,stomatophora,121,,
+29.5,Diatom,Eunotia,arcus,23,,
+29.5,Diatom,Eunotia,pirla,1,,
+29.5,Diatom,Surirella,spiralis,1,,
+29.5,Diatom,Pinnularia,viridiformis,61,,
+29.5,Diatom,Eunotia,musicola,8,,
+29.5,Diatom,Brachysira ,brebissonii,21,,
+29.5,Diatom,Encyonema,neomuelleri,1,,
+29.5,Spicules,Porifera,,17,,
+29.5,Phytoliths,,,20,Globular,granulate
+32,Diatom,Caloneis,,22,,
+32,Diatom,Eunotia,arcus,28,,
+32,Diatom,Frustulia ,rhomboides,47,,
+32,Diatom,Brachysira ,brebissonii,65,,
+32,Diatom,Pinnularia,stomatophora,114,,
+32,Diatom,Aulacoisera,,1,,
+32,Diatom,Pinnularia,viridiformis,87,,
+32,Spicule,Porifera,,25,,
+32,Phytoliths,,,25,Globular,granulate
+32,Phytoliths,Monocot,,4,Elongate,psilate
+32,Diatom,999,999,1,,
+32,Diatom,Eunotia,flexuosa,1,,
+32,Diatom,Eunotia,musicola,16,,
+32,Diatom,Eunotia,pirla,1,,
+34.5,Diatom,Brachysira ,brebissonii,299,,
+34.5,Diatom,Eunotia,arcus,37,,
+34.5,Diatom,Pinnularia,stomatophora,35,,
+34.5,Diatom,Pinnularia,viridiformis,55,,
+34.5,Diatom,Caloneis,,40,,
+34.5,Diatom,Stenop-terobia,intermedia,1,,
+34.5,Diatom,Eunotia,musicola,15,,
+34.5,Diatom,Surirella,spiralis,2,,
+34.5,Diatom,Eunotia,diodon,18,,
+34.5,Diatom,Eunotia,pirla,1,,
+34.5,Spicule,Porifera,,2,,
+34.5,Diatom,Frustulia ,rhomboides,47,,
+34.5,Phytoliths,,,15,Globular,granulate
+34.5,Spicule,Heterorotula,multidentata,1,,
+37.5,Diatom,Frustulia ,rhomboides,2,,
+37.5,Diatom,Pinnularia,viridiformis,136,,
+37.5,Diatom,Pinnularia,stomatophora,168,,
+37.5,Diatom,Eunotia,arcus,62,,
+37.5,Diatom,Caloneis,,52,,
+37.5,Diatom,Surirella,spiralis,7,,
+37.5,Diatom,Eunotia,musicola,27,,
+37.5,Diatom,Brachysira ,brebissonii,258,,
+37.5,Phytoliths,Grass,,1,Trapezoid,oblong
+37.5,Phytoliths,,,17,Globular,granulate
+37.5,Phytoliths,,,4,3D,
+37.5,Phytoliths,Grass,,2,Bilobate,
+51,Diatom,Pinnularia,stomatophora,89,,
+51,Diatom,Pinnularia,viridiformis,46,,
+51,Diatom,Eunotia,pectinalis,1,,
+51,Diatom,Eunotia,arcus,14,,
+51,Diatom,Eunotia,musicola,1,,
+51,Diatom,Eunotia,pirla,4,,
+51,Diatom,Caloneis,,12,,
+51,Diatom,Encyonema,neomuelleri,8,,
+51,Phytoliths,Monocot,,15,Acicular,
+51,Phytoliths,Monocot,,25,Cuneiform,bulliform
+51,Spicule,Porifera,,883,,
+51,Diatom,Brachysira ,brebissonii,12,,
+51,Phytoliths,,,52,Globular,granulate
+51,Phytoliths,Monocot,,25,Elongate,facetated
+53,Phytoliths,,,102,Globular,granulate
+53,Diatom,Pinnularia,stomatophora,135,,
+53,Diatom,Pinnularia,viridiformis,90,,
+53,Diatom,Eunotia,musicola,8,,
+53,Diatom,Eunotia,arcus,29,,
+53,Diatom,Caloneis,,35,,
+53,Diatom,Brachysira ,brebissonii,300,,
+53,Diatom,Stauroneis,phoenicenteron,1,,
+53,Diatom,Surirella,spiralis,11,,
+53,Phytoliths,Monocot,,12,Elongate,rugose
+53,Phytoliths,Monocot,,4,Elongate,psilate
+53,Diatom,Frustulia ,rhomboides,36,,
+53,Spicule,Porifera,,21,,
+57,Diatom,Pinnularia,stomatophora,455,,
+57,Diatom,Pinnularia,viridiformis,10,,
+57,Diatom,999,,12,,
+57,Diatom,Caloneis,,8,,
+57,Diatom,Eunotia,pirla,3,,
+57,Diatom,Eunotia,arcus,1,,
+57,Phytoliths,Monocot,,6,Elongate,psilate
+57,Spicules,Porifera,,84,,
+58,Spicules,,,2,,
+58,Diatom,Pinnularia,stomatophora,148,,
+58,Diatom,Pinnularia,viridiformis,100,,
+58,Diatom,Eunotia,arcus,51,,
+58,Diatom,Frustulia ,rhomboides,6,,
+58,Diatom,Brachysira ,brebissonii,178,,
+58,Phytoliths,,,6,Elongate,facetated
+58,Phytoliths,,,10,Globular,granulate
+58,Diatom,Eunotia,musicola,2,,
+60,Diatom,Pinnularia,stomatophora,84,,
+60,Diatom,Pinnularia,viridiformis,68,,
+60,Diatom,Caloneis,,81,,
+60,Diatom,Brachysira ,brebissonii,28,,
+60,Diatom,Eunotia,arcus,31,,
+60,Diatom,Stauroneis,phoenicenteron,6,,
+60,Diatom,Eunotia,musicola,3,,
+60,Phytoliths,,,54,Globular,granulate
+60,Spicules,Porifera,,30,,
+61,Phytoliths,,,21,Globular,granulate
+61,Diatom,Brachysira ,brebissonii,60,,
+61,Diatom,Pinnularia,stomatophora,379,,
+61,Diatom,Pinnularia,viridiformis,93,,
+61,Diatom,Caloneis,,55,,
+61,Diatom,Eunotia,arcus,20,,
+61,Diatom,Stauroneis,phoenicenteron,3,,
+61,Diatom,Eunotia,musicola,1,,
+61,Diatom,Surirella,spiralis,2,,
+61,Spicule,Porifera,,10,,
+63,Diatom,Pinnularia,stomatophora,116,,
+63,Diatom,Pinnularia,viridiformis,31,,
+63,Diatom,Caloneis,,66,,
+63,Diatom,Eunotia,arcus,43,,
+63,Diatom,Brachysira ,brebissonii,90,,
+63,Diatom,Encyonema,neomuelleri,12,,
+63,Diatom,Caloneis,amphisbaena,2,,
+63,Diatom,Eunotia,pirla,2,,
+63,Diatom,Eunotia,musicola,6,,
+63,Diatom,Surirella,spiralis,4,,
+63,Spicules,Porifera,,50,,
+63,Phytoliths,,,16,Elongate,facetated
+63,Phytoliths,,,5,Elongate,sinuous
+63,Phytoliths,,,20,Globular,granulate
+64,Diatom,Pinnularia,stomatophora,124,,
+64,Diatom,Pinnularia,viridiformis,64,,
+64,Diatom,Stauroneis,phoenicenteron,8,,
+64,Diatom,Eunotia,arcus,32,,
+64,Diatom,Eunotia,musicola,2,,
+64,Diatom,Caloneis,,33,,
+64,Diatom,Surirella,spiralis,1,,
+64,Phytoliths,,,  ,Globular,granulate
+64,Diatom,Brachysira ,brebissonii,17,,
+64,Spicule,Porifera,,15,,
+66,Spicles,Porifera,,5,,
+68,Diatom,Frustulia ,rhomboides,4,,
+68,Diatom,Pinnularia,stomatophora,111,,
+68,Diatom,Pinnularia,viridiformis,171,,
+68,Diatom,Caloneis,,82,,
+68,Diatom,Eunotia,arcus,55,,
+68,Diatom,Stauroneis,phoenicenteron,9,,
+68,Diatom,Eunotia,pirla,1,,
+68,Diatom,Eunotia,musicola,11,,
+68,Diatom,Encyonema,neomuelleri,4,,
+68,Diatom,Eunotia,flexuosa,2,,
+68,Spicule,Porifera,,91,,
+68,Phytoliths,,,21,Globular,granulate
+68,Phytoliths,Grass,,13,Cuneiform,bulliform
+68,Phytoliths,Monocot,,300,Elongate,blocky
+71,Diatom,Pinnularia,stomatophora,215,,
+71,Diatom,Pinnularia,viridiformis,15,,
+71,Diatom,Eunotia,arcus,5,,
+71,Diatom,Brachysira ,brebissonii,8,,
+71,Spicule,Porifera,,445,,
+71,Phytoliths,Non diagnostic,,6,Tracheids,
+71,Phytoliths,Monocot,,45,Elongate,facetated
+71,Phytoliths,Monocot,,65,Cuneiform,bulliform
+71,Phytoliths,Monocot,,15,Acicular,
+71,Phytoliths,,,70,Globular,granulate
+71,Phytoliths,Monocot,,13,Elongate,sinuate
+75,Diatom,Pinnularia,stomatophora,51,,
+75,Diatom,Pinnularia,viridiformis,19,,
+75,Diatom,Eunotia,pirla,3,,
+75,Diatom,Stauroneis,phoenicenteron,10,,
+75,Diatom,Surirella,spiralis,1,,
+75,Diatom,Encyonema,neomuelleri,2,,
+75,Diatom,Encyonema,latum,3,,
+75,Diatom,Eunotia,flexuosa,2,,
+75,Phytoliths,Monocot,,29,Acicular,
+75,Phytoliths,Monocot,,27,Elongate,psilate
+75,Phytoliths,Monocot,,29,Cuneiform,bulliform
+75,Phytoliths,Monocot,,7,Elongate,sinuate
+75,Phytoliths,Monocot,,13,Elongate,facetated
+75,Spicule,Porifera,,73,,
+83,Diatom,Pinnularia,stomatophora,9,,
+83,Diatom,Pinnularia,viridiformis,16,,
+83,Phytoliths,Non diagnostic,,2,Tracheids,
+83,Diatom,Caloneis,,3,,
+83,Phytoliths,Monocot,,300,Elongate,rugose
+83,Phytoliths,Monocot,,13,Elongate,psilate
+83,Phytoliths,Monocot,,4,Elongate,sinuate
+83,Phytoliths,Monocot,,24,Acicular,
+83,Phytoliths,,,12,Globular,granulate
+83,Phytoliths,Monocot,,53,Cuneiform,bulliform
+83,Spicule,Porifera,,73,,
+92,?,,,,,
+93,Diatom,Pinnularia,stomatophora,165,,
+93,Diatom,Brachysira ,brebissonii,14,,
+93,Diatom,Pinnularia,viridiformis,8,,
+93,Spicule,Porifera,,15,,
+93,Diatom,Eunotia,arcus,1,,
+93,Phytoliths,Monocot,,15,Cuneiform,bulliform
+93,Phytoliths,Monocot,,97,Elongate,psilate
+93,Phytoliths,Monocot,,42,Elongate,facetated
+93,Phytoliths,Monocot,,23,Elongate,sinuate
+94,Phytoliths,,,11,Elongate,
+94,Phytoliths,,,2,Cuneiform,bulliform
+94,Phytoliths,,,27,Globular,granulate
+94,Phytoliths,,,15,Acicular,
+94,Spicules,,,22,,
+96,Phytoliths,,,2,Cuneiform,bulliform
+96,Phytoliths,,,7,Elongate,
+96,Phytoliths,,,8,Globular,granulate
+96,Phytoliths,,,4,Acicular,
+96,Spicules,,,7,,
+97,Phytoliths,,,2,Cuneiform,bulliform
+97,Phytoliths,,,16,Elongate,
+97,Phytoliths,,,1,Acicular,
+97,Phytoliths,,,2,3D,
+97,Phytoliths,,,18,Globular,granulate
+97,Spicules,,,12,,
+100,Spicule,Porifera,,4,,
+100,Phytoliths,Monocot,,300,Elongate,rugose
+100,Phytoliths,Monocot,,12,Acicular,
+100,Phytoliths,,,78,Globular,granulate
+100,Phytoliths,Monocot,,5,Cuneiform,bulliform
+102,Diatom,Pinnularia,stomatophora,9,,
+102,Diatom,Stauroneis,phoenicenteron,9,,
+102,Diatom,Pinnularia,viridiformis,2,,
+102,Spicule,Porifera,,27,,
+102,Phytoliths,Monocot,,300,Elongate,rugose
+102,Phytoliths,Monocot,,40,Cuneiform,bulliform
+102,Phytoliths,Non diagnostic,,19,Acicular,
+102,Phytoliths,Monocot,,25,Elongate,facetated
+102,Phytoliths,Monocot,,2,Tracheids,
+102,Phytoliths,Monocot,,2,Elongate,echinate
+102,Phytoliths,Monocot,,11,3D,
+104,Spicules,,,96,,
+104,Phytoliths,,,65,Elongate,
+104,Phytoliths,,,80,Globular,granulate
+110,Diatom,Pinnularia,viridiformis,2,,
+110,Diatom,Eunotia,arcus,1,,
+110,Phytoliths,Monocot,,1,Elongate,sinuate
+110,Phytoliths,Monocot,,7,Acicular,
+110,Phytoliths,Non diagnostic,,4,Tracheids,
+110,Phytoliths,Monocot,,17,Elongate,facetated
+110,Phytoliths,Monocot,,13,Cuneiform,bulliform
+110,Phytoliths,Monocot,,5,3D,
+110,Spicule,Porifera,,13,,
+118,Diatom,Pinnularia,stomatophora,87,,
+118,Diatom,Caloneis,,4,,
+118,Diatom,Encyonema,neomuelleri,1,,
+118,Diatom,Eunotia,pirla,3,,
+118,Phytoliths,Non diagnostic,,7,Tracheids,
+118,Phytoliths,Monocot,,30,Elongate,sinuate
+118,Phytoliths,Monocot,,14,,bulliform
+118,Phytoliths,Monocot,,6,Elongate,facetated
+118,Phytoliths,Grass,,7,Saddle,
+118,Spicule,Porifera,,999,,
+132,Diatom,Pinnularia,viridiformis,1,,
+132,Diatom,Pinnularia,stomatophora,2,,
+132,Phytoliths,Non diagnostic,,1,Tracheids,
+132,Phytoliths,Monocot,,9,Cuneiform,bulliform
+132,Phytoliths,Monocot,,22,Elongate,facetated
+132,Phytoliths,Monocot,,300,Elongate,rugose
+132,Phytoliths,Monocot,,5,Acicular,
+132,Phytoliths,Grass,,2,Bilobate,
+132,Phytoliths,Monocot,,11,Elongate,echinate
+132,Spicule,Porifera,,5,,
+159,Diatom,Caloneis,,1,,
+159,Diatom,Pinnularia,viridiformis,6,,
+159,Diatom,Eunotia,arcus,1,,
+159,Phytoliths,Monocot,,5,Cuneiform,bulliform
+159,Phytoliths,Monocot,,12,Acicular,
+159,Phytoliths,999,,40,999,
+159,Phytoliths,Non diagnostic,,5,Tracheids,
+159,Phytoliths,Monocot,,2,Elongate,echinate
+159,Phytoliths,Monocot,,300,Elongate,rugose
+159,Phytoliths,Monocot,,40,Elongate,facetated
+159,Spicules,Porifera,,377,,
+179,Diatom,Pinnularia,viridiformis,1,,
+179,Phytoliths,Non diagnostic,,3,Tracheids,
+179,Phytoliths,Monocot,,251,Elongate,rugose
+179,Phytoliths,Monocot,,15,Elongate,facetated
+179,Phytoliths,Monocot,,3,Cuneiform,bulliform
+179,Phytoliths,Monocot,,4,Acicular,
+179,Phytoliths,Monocot,,28,3D,
+179,Phytoliths,Monocot,,7,Elongate,echinate
+179,Spicule,Porifera,,77,,
+114,Spicules,Porifera,,65,,
+114,Phytoliths,,,22,Elongate,facetated
+114,Phytoliths,,,54,Globular,granulate
+147,Phytoliths,,,76,Globular,granulate
+147,Phytoliths,,,23,Elongate,facetated
+147,Spicules,,,99,,
