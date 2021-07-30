@@ -1,13 +1,6 @@
 library(here)
 library(tidyverse)
 
-# last cleaned versio ready for map? cleaned_back3
-
-
-# Using climate_1_2 do an extra column: "Indicator": Climate/vegetation; fire
-# use climate sites_7 as a base and join with climate_sites_3
-# maybe add the extra ones to climate_sites_5 or 7 and charcoal, add Emma's
-
 
 climate<-read.csv(here("data","climate_sites_3.csv"))
 
@@ -42,13 +35,6 @@ climate_1_3<-climate%>%
         filter(Longitude>136 & Longitude<151)
 
 
-
-
-
-
-
-
-
 write.csv(climate_1,file=(here("data","climate_sites_4.csv")))
 
 
@@ -62,8 +48,6 @@ merged_climate<- climate_1_3%>%
         left_join(climate_2)
 
 
-
-
 climate_1_2<-climate_2%>% #PDP20 and lake euramoo repeated, delete gilbert river?; de deckker 2001 to lc gc2; zurath is 6520;delete Boigu Gawat Core 2? waruid is 6 ka, badu 15 is 8 ka;
         # include bentick 2.4 ka and lizard island 8 ka in the lit review
        # select(-X,-X.3)%>%
@@ -73,10 +57,6 @@ climate_1_2<-climate_2%>% #PDP20 and lake euramoo repeated, delete gilbert river
         filter(Record!="Coral")%>%
        # rename(Type='X.1', Length='X.2')%>%
         filter(Longitude>135.15 & Longitude<147)
-
-
-
-
 
 Site<-c("Bentinck Island", "Lizard Island")
 Latitude<-c(-17.0666, -14.665)
@@ -160,7 +140,7 @@ str(climate_1_2)
 
 library(ggmap)
 map <- get_map(location = 'Oceania', zoom = 5)
-ggmap::register_google(key = "AIzaSyAYjWh9pLpk_fVgKEdGX4QFTP2oD6b0u2s")
+# Include Google API
 
 mapPoints <- ggmap(map) +
          geom_point(aes(x = Longitude, y = Latitude), data = climate_1_2, alpha = .5)
