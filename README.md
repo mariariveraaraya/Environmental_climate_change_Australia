@@ -8,10 +8,6 @@ Directories
     experiments/: raw data obtained from the different experiments carried out for the thesis.
     scripts/: R code to clean and wrangle the data used for the analyses and graphs. Some of the files in this directory contain code to produce graphs.
     processed_data/: final processed data and corresponding dictionaries.
-    graphs/:
-    text:/
-    
-    
     scripts/: R code to reproduce tables, figures and analysis.
     Rmd/: R Markdown source documents for thesis document.
     data/: Cleaned data used for thesis document.
