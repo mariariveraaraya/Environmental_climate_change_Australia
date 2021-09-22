@@ -12,6 +12,6 @@ Directories
     Rmd/: R Markdown source documents for thesis document.
     data/: Cleaned data used for thesis document.
     data-raw/: R code to generate data in data/.
-    img/: Images made with other tools to illustrate ideas.
+    img/: Images made with QGIS and other tools to illustrate ideas.
     bib/: Bibliography files.
-    template/: Monash thesis template from robjhydman/MonashThesis.
+    
