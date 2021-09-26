@@ -2,6 +2,7 @@
 
 This repo contains source files for my PhD thesis titled, "Multi-proxy evidence for long environmental change in northern Australia's tropical savannas", at James Cook University. Further information and metadata can be accessed at www.research.jcu.edu.au
 
+The folder 'experiments' contains the raw data associated with each indicator used.
 
 Directories
 
