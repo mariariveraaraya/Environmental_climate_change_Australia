@@ -1,6 +1,6 @@
 # PhD_Final
 
-This repo contains source files for my PhD thesis titled, "Multi-proxy evidence for long environmental change in northern Australia's tropical savannas", at James Cook University. Further information and metadata can be accessed at www.research.jcu.edu.au
+This repo contains source files for my PhD thesis titled, "Multi-proxy evidence for long environmental change in northern Australia's tropical savannas", at James Cook University. Further information and metadata can be accessed at https://research.jcu.edu.au/. DOI number is in progress.
 
 The datasets are from biological and chemical indicators measured in a sediment core. I integrated the information from all different indicators using several statistical techniques, including hierarchical cluster, principal component analysis, regression, and time series analysis. I performed the data cleaning, wrangling, manipulation, analysis, and visualisation of a dataset with over 3,000 observations from more than 35 variables.
 
