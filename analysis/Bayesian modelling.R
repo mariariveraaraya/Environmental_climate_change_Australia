@@ -1,4 +1,5 @@
-##THis spreadsheet is for the processing of both Bacon and Oxcal samples.
+# This spreadsheet is for the processing of radiocarbon dates using Bayesian modelling and the package Bacon.
+
 library(ggplot2)
 library(dplyr)
 library(rbacon)
@@ -13,9 +14,6 @@ setwd(here("experiments", "exp_radiocarbon","data"))
 
 
 #age_model_Jan20<-read.csv(here("experiments", "exp_radiocarbon","data", "EA.180614.csv"),na.strings=c("NA","#DIV/0!",""))
-
-
-
 
 
 #All hypy dates 
