@@ -1,0 +1,101 @@
+---
+title: "Environmental changes over time in Cape York Peninsula"
+subtitle: ""
+author: "Maria Rivera Araya"
+institute: ""
+date: "2021/10/06"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+class: middle
+
+# Statement of the problem
+
+.pull-left[
+- Spatial gaps
+
+- Temporal gaps
+]
+
+.pull-right[
+![an image](map_1.png)
+
+]
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+???
+<img src="map_1.png" style="width: 50%" />
+Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
+
+---
+# Design a solution
+
+.pull-left[
+- A lot of data recorded in the sediments
+
+- Chemical: nutrient and metal abundance
+
+- Biological/ecological: fossils: algae, pollen
+]
+
+.pull-right[
+<img src="core.png" style=width="400" height="500" />
+
+]
+
+
+---
+class: inverse, center, middle
+
+# Subproject 1
+## How old is the core?
+
+---
+## Bayesian modelling to assign ages to the sediments in the core
+
+<img src="model.png" style="width: 100%"/>
+
+---
+class: inverse, center, middle
+
+# Subproject 2
+## Find environmental and climate changes across time
+
+
+---
+## Hierarchical clustering and PCA to delineate periods of change
+
+- Water levels 
+- pH
+
+
+<img src="diatom.png" style="width: 80%"/>
+
+
+---
+## Hierarchical clustering and PCA to delineate periods of change
+
+- Erosion 
+
+<img src="elements.png" style="width: 100%"/>
+
+---
+class: inverse, center, middle
+
+# Final product
+
+- Database of seven different environmental indicators and periods of time
+- To be included in climate projections
+- Implemented FAIR data principles
+
+---
+
