@@ -16,5 +16,6 @@ Directories
     Rmd/: R Markdown source documents for thesis document.
     bib/: Bibliography files.
     img/: Images made with QGIS and other tools to illustrate ideas.
+    short_overview: short presentation with a summary of the thesis outcomes
     
 
