@@ -18,9 +18,12 @@ class: middle
 # Statement of the problem
 
 .pull-left[
-- Spatial gaps
 
-- Temporal gaps
+Future climate projections require past data to feed models.
+
+*But*
+
+There is a lack of information about past climate and environmental change in northern Australia
 ]
 
 .pull-right[
@@ -39,18 +42,16 @@ Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharin
 ---
 # Design a solution
 
-.pull-left[
-- A lot of data recorded in the sediments
 
-- Chemical: nutrient and metal abundance
+1. Obtain ages for the sediments - Subproject 1
 
-- Biological/ecological: fossils: algae, pollen
-]
+2. Identify and delineate periods of change - Subproject 2
 
-.pull-right[
-<img src="core.png" style=width="400" height="500" />
+---
 
-]
+class: center
+
+<img src="graphs_2.png" style="width: 30%"/>
 
 
 ---
@@ -72,30 +73,22 @@ class: inverse, center, middle
 
 
 ---
-## Hierarchical clustering and PCA to delineate periods of change
-
-- Water levels 
-- pH
+## Hierarchical clustering and PC to delineate periods of change
 
 
-<img src="diatom.png" style="width: 80%"/>
+- Four main periods of environmental change were identified (33 - 29.1 ka, 29.1 - 18.2 ka, 18.2 - 9.7 ka and 9.7 ka - present).
 
+- Regional climatic events, such as the reactivation of the monsoon and sea level rise are reflected in the local ecosystems along a diversity of biogeochemical responses.
 
 ---
-## Hierarchical clustering and PCA to delineate periods of change
 
-- Erosion 
-
-<img src="elements.png" style="width: 100%"/>
-
----
 class: inverse, center, middle
 
-# Final product
+# Dissemination
 
-- Database of seven different environmental indicators and periods of time
-- To be included in climate projections
-- Implemented FAIR data principles
+- Thesis
+- Github
+- Publications under review
+- Dataset with past environmental data to feed climate models (complying with FAIR data principles)
 
----
 
