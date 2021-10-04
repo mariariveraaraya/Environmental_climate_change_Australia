@@ -6,9 +6,6 @@ The thesis followed the FAIR data principles and metadata was created according 
 
 The datasets are from biological and chemical indicators measured in a sediment core. I integrated the information from all different indicators using several statistical techniques, including hierarchical cluster, principal component analysis, regression, and time series analysis. I performed the data cleaning, wrangling, manipulation, analysis, and visualisation of a dataset with over 3,000 observations from more than 35 variables.
 
-The folder 'experiments' contains the raw data associated with each indicator used.
-The folder 'preprocessing' contains the cleaning and wrangling of each dataset.
-Thr folder 'processed_data' contails 
 
 Directories
 
