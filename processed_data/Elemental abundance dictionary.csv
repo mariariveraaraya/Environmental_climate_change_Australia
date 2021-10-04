@@ -1,0 +1,37 @@
+Variable name,Variable description
+median,median age  in calibrated years before the present
+Identifier,Internal laboratory code
+Depth,Depth of sample in centimeters
+d_g_wet_sed,Diatoms per gram of wet sediment
+NorTi,Normalised Titatium counts
+NorAl,Normalised Aluminium counts
+NorSi,Normalised Silicon counts
+NorSr,Normalised Strontium counts
+NorRb,Normalised Rubidium counts
+NorCa,Normalised Calcium counts
+NorFe,Normalised Iron counts
+sedrate.mm,Sedimentation rate in milimeters per year
+Water,Water percentage
+Dry_bulk_density2,Dry bulk density 
+Fraction,Grain size fraction
+Percentage,Percentage of grain size fraction
+averaged.d13C,Carbon isotope measurement (per mill)
+averaged.C.N,Carbon to nitrogen abundance ratio
+averaged.d15N,Nitrogen isotope measurement (per mill)
+averaged.C,Carbon abundance
+averaged.N,Nitrogen abundance
+max,Maximum modelled aged in calibrated years before present
+min,Minimum modelled aged in calibrated years before present
+mean,Mean modelled aged in calibrated years before present
+PrC,Principal curve XXXX
+Fe_Ti,Iron to Titanium ratio
+Si_Ti,Silicon to Titatium ratio
+Si_Al,Silicon to Aluminum ratio
+Al_Si,Aluminum to Silicon ratio
+Ti_Al,Titanium to Alumium ratio
+roll_Al_Si,Rolling mean Aluminum to Silicon ratio
+roll_Si_Al,Rolling mean Silicon to Aluminum ratio
+roll_Ti_Al,Rolling mean Titanium to Aluminum ratio
+roll_Fe,Rolling mean Iron
+sumdepth_sand_coarse,Coarse sand percentage
+roll_Ti,Rolling mean Titanium

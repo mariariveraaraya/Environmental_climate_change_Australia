@@ -1,0 +1,29 @@
+Variable name,Variable description
+Identifier,Internal laboratory code
+Sample.weight,Initial sample weight (g)
+Catalyst,Catalyst (mg)
+X..Catalyst,Catalyst percentage
+Pre.Sample.Weight,Sample weight in insert (g)
+Pre.HyPy.Insert.Weight..g.,Before Hydrogen pyrolysis Insert weight (g)
+Post.HyPy.Insert.Weight..g.,After Hypy Insert weight (g)
+Post.Sample.Weight,After Hypy Sample weight (g)
+av_d13C,Carbon isotope measurement before Hypy (per mill)
+av_C,Percentage of carbon in sample before Hypy
+av_Cpost,Percentage of carbon in sample after Hypy
+av_d13Cpost,Carbon isotope measurement after Hypy (per mill)
+PreHypy.X.C,Percentage of carbon in sample before Hypy
+C.pre.mg,Carbon in sample before hypy (mg)
+C.post.mg,Carbon in sample after hypy (mg)
+Ratio.BCTOC,Ratio of black carbon to total organic carbon
+BlackCarbon.Perc,Black carbon percentage
+Corrected,Black carbon percentage corrected
+Dry_bulk_density2,Dry bulk density (g/cm3)
+Water,Water percentage
+Depth,Depth (cm)
+median,median calibrated years before present
+mean,mean calibrated years before present
+yearbetsamples,number of years between samples
+sedrate,sedimentation rate (cm/year)
+sedrate.mm,sedimentation rate (mm/year)
+MAR,Mass accumulation rate (mm2/yr)
+PyCxMAR,Pyrogenic carbon mass accumulation rate (ug mm2/yr)
