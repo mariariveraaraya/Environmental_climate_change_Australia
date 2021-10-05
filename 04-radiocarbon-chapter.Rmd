@@ -1,0 +1,222 @@
+# Developing a radiocarbon chronology for the Sanamere Lagoon sediment core
+```{r radiocarbon, echo = FALSE, cache = FALSE, include = FALSE}
+library(knitr)
+library(here)
+library(bookdown)
+
+
+#read_chunk('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia #renamed/Sanamere/Thesis sections/PhD/analysis/Radiocarbon/bacon SAN.R')
+
+#read_chunk('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia #renamed/Sanamere/Thesis sections/PhD/preprocessing/pre_age_model.R')
+
+read_chunk('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/analysis/Radiocarbon/an_radiocarbon-LAPTOP-3NCFQGAR.R')
+
+#Abstract; including applications for other dating methods  lessons in terms of not making equivalent assumptions on a material's nature
+#implications for tropical palaeo-research 
+#CHECK FOR CHANGES IN DATES AFTER UPDATES! include table with tested samples (Processed_2020)?, fix the text for changes in ranges and exact dates after update
+
+
+#read_chunk('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/analysis/Radiocarbon/bacon SAN.R')
+
+# if including PyC then have to refer to something else!
+#read_chunk((here("analysis", "Radiocarbon", "an_radiocarbon-LAPTOP-3NCFQGAR.R")))
+#setwd("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD-thesis-VC/writeup")
+###not know why if EVAL=TRUE in chunk with ggplot knitting to word does not work
+```
+
+```{r pre,echo = FALSE, cache = FALSE, include = FALSE}
+```
+
+```{r load-pkg,echo = FALSE, cache = FALSE, include = FALSE}
+```
+## Introduction
+
+Obtaining an accurate chronology is fundamental to placing any reconstruction of past environmental change within a robust temporal framework. Selecting a reliable carbon fraction and a pre-treatment that removes all or most of the contaminants are key to obtaining reliable radiocarbon dates [@pettittPalaeolithicRadiocarbonChronology2003; @bronkramseyRadiocarbonDatingRevolutions2008]. This selection becomes particularly challenging in the tropics where high annual temperatures negatively and differentially influence the preservation of different organic fractions. Furthermore, the seasonal nature of the tropical hydrological cycle in northern Australia results in high rates of weathering and variable pH and redox conditions, in turn altering carbon cycling and preservation in lake sediment columns [@birdRadiocarbonAnalysisEarly2002; @highamRadiocarbonDatingCharcoal2009]. Collectively, these conditions limit the availability of those organic components considered more reliable and the dating of other fractions can result in aberrant radiocarbon results that are linked to, for example, poorly preserved or degraded charcoal, identifiable when the combustion yields are lower than usually expected (50–60 % carbon by weight) [@highamRadiocarbonDatingCharcoal2009]. Although there is currently no agreement about which is the most reliable fraction to avoid these issues, short-lived plant macrofossils and charcoal [@cohenPaleolimnologyHistoryEvolution2003;@martinRadiocarbonAgesDifferent2019] tend to be among the most favoured materials for dating.
+
+Despite the importance of choosing a reliable carbon fraction that represents the age of contemporaneous sediment deposition, few studies have focused on sediments in the tropics. Comparative studies based on multiple organic fractions in the tropics have focused on swamps [@mayEstablishingChronologicalFramework2018], peats [@wustComparisonRadiocarbonAges2008] and organic springs [@fieldUntanglingGeochronologicalComplexity2018], with no studies having been undertaken using lake sediments and no studies in any tropical environment compare more than four fractions. Results from the available studies (as mentioned above) are contradictory regarding the reliability of macro-charcoal and pollen concentrates (yielding anomalously older or younger ages compared to other fractions). Studies in temperate areas have also reported significant discrepancies between radiocarbon dates for different, supposedly contemporaneous carbon fractions in lake sediments from the same depth. For example, in boreal and arctic lake sediments wood and charcoal were found to be older than other organic materials such as conifer and deciduous periderms, usually by several hundred years [@oswaldEffectsSampleMass2005]. 
+
+Discrepancies have likewise been found within different types of macrofossils, with some more prone to an apparent ‘reservoir effect’ [@turneyImplicationsDatingWisconsinan2000]. For instance, pollen, charcoal and bulk sediment are recognized to be highly mobile, porous and heterogeneously sourced, all of which complicates their reliability for radiocarbon dating. Additionally, several studies have demonstrated that there are significant uncertainties associated with simply dating bulk sediment, regardless of the geographical location from where the sample was collected [@bjorckHighresolution14CDated1998; @wustComparisonRadiocarbonAges2008; @xuVariationsRadiocarbonAges2003]. Extensive research has shown how the effect of contamination depends on the age of the sample [@pettittPalaeolithicRadiocarbonChronology2003; @highamRadiocarbonDatesOxford2011; @woodRevolutionConventionPresent2015]. Dating beyond 10 thousand calibrated years before present (ka) becomes considerably more problematic as even minimal percentages of contamination can cause hundreds to thousands of years of offset [@aitkenSciencebasedDatingArchaeology1990; @woodRevolutionConventionPresent2015]. In fact, offsets of up to 16,000 years between radiocarbon ages from bark and pollen from a tropical peat were obtained in a previous study, with pollen extracts resulting in older dates [@wustComparisonRadiocarbonAges2008]. 
+
+Pre-treatment procedures are also fundamental to the generation of accurate radiocarbon dates. While acid-base-acid  (ABA treatment) is routinely employed to remove contaminants, it is not always effective [@chappellRadiocarbonLimitAustralian1996; @gillespieAMSDatingLate1992]. Notably, the determination of when decontamination is complete is technically challenging. The base treatment during ABA can further remove charcoal by solubilizing it to 'humic acid', resulting in considerable sample loss. As an alternative to ABA, acid-base-wet oxidation (ABOX) has been found to be more appropriate and an effective method to remove contamination, especially for old samples [@birdRadiocarbonDatingOld1999; @birdEfficiencyCharcoalDecontamination2014]. However, the harshness of the technique can remove excessive carbon and this may limit the application of the technique in the tropics where macroremains are scarce [@birdRadiocarbonDatingOld1999]. Recent studies have shown that ABA and hypy-treated pairs can produce comparable results to each other in some contexts [@birdEfficiencyCharcoalDecontamination2014;@alexRadiocarbonChronologyManot2017;@david45610522019]. Hydropyrolysis (hypy) (to isolate stable polycyclic aromatic carbon: SPAC) has shown promising results in mound spring deposits, where the technique appeared to remove the effects of post-depositional modification to the ages obtained from different organic fractions from the sediment [@fieldUntanglingGeochronologicalComplexity2018]. Given this promising result, hypy pretreatment might be expected to be similarly effective in lake sediments.
+
+Given the fact that most studies rely on the dates from one organic fraction over the entire sequence, it is imperative to test whether alternative protocols using different carbon fractions, pre-treatments would yield more accurate results across a range of depositional ages. This chapter examines six carbon fractions in samples from a Sanamere Lagoon sediment core to determine which fraction and technique pre-treatment is most appropriate to obtain reliable radiocarbon dating results.
+
+## Methodology
+
+Details about the site, field work and core processing can be found in chapter \@ref(ch:sed). Samples for ^14^C AMS dating were obtained for six different carbon fractions (hypy, microcharcoal, macrocharcoal, pollen concentrate, 'cellulose' and bulk organics) for six depths spread along the core (Table \@ref(tab:tb-one), Figure \@ref(fig:radiocarbonmet) and Figure \@ref(fig:fractions)). These depths were chosen by consideration of the stratigraphic changes (see chapter \@ref(ch:sed)) observed along the sequence (texture, color, elemental abundance). Although attempts to extract all fractions from the same depth were made, this was not achieved as samples from some depths yielded insufficient amounts of carbon after pretreatment to be processed for radiocarbon dating (Appendix 1). In order to address this issue, samples from additional depths were analysed to complete the age-depth model. 
+
+### Pre-treatment
+
+Pre-treatment of radiocarbon samples for pollen, cellulose, macrocharcoal, microcharcoal and bulk organics (standard method) followed the ANSTO protocols detailed below. 
+
+#### Pollen
+
+Extraction of pollen was adapted from @bennettPollen2002. Three sediment samples were washed with 10 % HCl and then passed through a 150 $\mu$m sieve. The smaller fraction was retained and then washed with 10 % NaOH several times until the supernatant was clear. Subsequently, 20 mL of 40 % HF was added and the sample left overnight. Subsequently, the samples were first washed two times with 2 M HCl and finally with Milli-Q water. Lithium heteropolytungstate (LST) with a specific gravity of 1.8 was used for density separation, with the floating fraction retained for examination under the microscope. The resultant pollen concentrate was dried overnight at 60°C.
+
+#### Bulk organics (standard method)
+
+Five sediment samples were processed at ANSTO following the ABA pre-treatment detailed in @hatteClassicalAcidAlkaliAcidTreatment2001. First, visible contaminants (roots, rocks) were removed and then a wash with 2 M HCl was performed (to remove carbonates), followed by sequential washes of 0.5 %, 1 %, 2 % and 4 % NaOH, until the supernatant liquid was clear (to remove fulvic and humic acids). A wash with 2 M HCl to remove any atmospheric carbon dioxide (CO~2~) absorbed during alkali treatment was performed, followed by three washes with Milli-Q water, and the samples were finally oven-dried at 60 °C overnight.
+
+#### Bulk organics (modified method)
+
+The pretreatment with hydrogen peroxide has proven to be effective in removing contaminant organic matter in radiocarbon dating samples [@chiuExtendingRadiocarbonCalibration2005]. In order to further test the success in removing exogenous organic matter, two additional sediment samples were first pretreated with 30 % hydrogen peroxide overnight at the Advanced Analytical Centre at James Cook University Cairns, freeze dried and then sent for standard ABA pre-treatment at the Waikato Radiocarbon Dating Laboratory. This procedure involved the removal of visible contaminants, following with the samples washed with hot HCl, then rinsed and treated with multiple hot NaOH washes. The NaOH insoluble fraction was treated with hot HCl, filtered, rinsed and dried. 
+
+#### Macro and microcharcoal
+
+Charcoal samples at 6 cm were pre-treated with 30 % hydrogen peroxide for 2 h and then passed through 250 $\mu$m and 63 $\mu$m sieves. These two fractions were then examined under the microscope, and pieces of charcoal were recovered using tweezers (in the case of the >250 $\mu$m fraction) and an Eppendorf InjectMan® 4 micromanipulator (for the 63 - 250 $\mu$m fraction). Samples were then washed with 0.5 % NaOH and 2 M HCl. Samples at 3 and 82 cm were pre-treated with 10 % hydrogen peroxide and the pre-treatment followed as above.
+
+#### Cellulose
+
+Extraction of cellulose was adapted from @gillespieNovelCellulosepreparationMethod2019. Three sediment samples were pre-treated with 1 M NaOCl/NaOH for 2 hours and washed with 1 M HCl. The samples were then reacted with 1 M NaClO~2~/HCl for another 2 hours and then washed with 1 M HCl. This procedure was then repeated and the samples were washed with water three times. Finally, samples were oven-dried at 60°C overnight.
+
+#### Hypy fraction
+
+Fourteen sediment samples were pretreated using hypy to isolate the pyrogenic carbon (PyC) [@ascoughHydropyrolysisNewTool2009; @meredithAssessmentHydropyrolysisMethod2012]. First, 30 % hydrogen peroxide was added to the samples. The samples were left overnight then washed with 2 M HCl, and freeze dried. Aliquots of each sample were then loaded with a catalyst and 20 % MeOH/H~2~O solution, sonicated for 15 min and dried over a hotplate at 60 °C. These samples were placed in the HyPy reactor, pressurized with hydrogen (H~2~) to 150 bar with a gas flow of 4 L/minute over 40 minutes. Finally, samples were washed for 2 hours with 6 M HCl at 60 °C.
+
+### Graphitization and measurement
+
+Samples were combusted at 900 °C to convert them to CO~2~, followed by graphitisation using the H~2~/Fe method [@huaProgressRadiocarbonTarget2001]. Carbon-14 measurement of all samples was undertaken by Accelerator Mass Spectrometry (AMS) on the VEGA and ANTARES accelerators at ANSTO [@finkANTARESAMSFacility2004] except for samples Wk50327 and Wk50328, which were measured at the Waikato Radiocarbon Dating Laboratory.
+
+### Calibration
+
+All samples were calibrated using the rbacon R package [@blaauwRbaconAgedepthModelling2019] and the IntCal13 calibration curve [@reimerIntCal13Marine13Radiocarbon2013] with 0 calibrated years before present representing 1950 AD. IntCal13 was used rather than SHCal13. IntCal13 was used due to the influence of Northern Hemisphere air masses on the Tropical North of Australia, when the Inter Tropical Convergence Zone moves southwards during the Australian-Indonesian summer monsoons [@hoggSHCal13SouthernHemisphere2013].
+
+```{r radiocarbon1,out.width = '100%', fig.align = "center", fig.cap = "(ref:tsibble-fit-cap)",echo=FALSE}
+
+#include_graphics(here("Figs","SAN_map_25_04_20.png"))
+
+include_graphics(here("Figs","SAN_final.png"))
+
+```
+(ref:tsibble-fit-cap) Sanamere Lagoon on Cape York Peninsula
+
+```{r radiocarbonmet,out.width = '100%', fig.align = "center", fig.cap = "(ref:radiocarbonmet)",echo=FALSE}
+
+#include_graphics(here("Figs","SAN_map_25_04_20.png"))
+
+include_graphics(here("other","RC cha","rad_met.png"))
+
+```
+(ref:radiocarbonmet) Summary of methods
+
+```{r fractions,out.width = '100%', fig.align = "center", fig.cap = "(ref:fractions)",echo=FALSE}
+
+#include_graphics(here("Figs","SAN_map_25_04_20.png"))
+
+include_graphics(here("other","RC cha","fractions.png"))
+
+```
+(ref:fractions) Carbon fractions and corresponding pretreatment techniques
+
+```{r tb-one-pre,echo = FALSE, cache = FALSE, include = FALSE, evaluate=FALSE}
+```
+
+```{r tb-three,echo = FALSE, include = FALSE,warning=FALSE,cache=FALSE}
+```
+
+## Results
+
+```{r lithology,out.width = '80%', fig.align = "center", fig.cap = "(ref:lithology)",echo=FALSE, include=FALSE}
+
+include_graphics(here("Figs","RC_fig2_b.png"))
+```
+(ref:lithology) Stratigraphy of the Sanamere sequence 
+
+A total of `r length(unique(all_first_table2$'Laboratory Code'))` radiocarbon dates were obtained for `r length(unique(all_first_table2$Depth))` different depths along the core. Overall, the ages ranged from 2.067 - 2.466 ka (2 $\sigma$) at 3 cm (hypy fraction) to 30.889 - 31.304 ka (2 $\sigma$) at 162 cm (hypy fraction), spanning `r as.integer(as.integer(max(data522$from_95,na.rm=TRUE))-as.integer(min(data522$to_95,na.rm=TRUE)))` years in total. As discussed above, ages were obtained for more than one fraction from six depths. Table \@ref(tab:tb-one) shows the results from the radiocarbon dating measurements and the calibrated results. Below 82 cm, the availability of fractions to compare was reduced to bulk organics, the hypy fraction and pollen concentrates, as these were the only fractions to yield sufficient carbon to be analysed by AMS. Therefore, charcoal fractions > 63 $\mu$m and cellulose could not be compared after this depth. From the three depths originally processed with the cellulose pre-treatment method only one sample retained enough carbon to be measured, given the aggressiveness of the pretreatment. 
+
+The micro-charcoal result at 3 cm showed the largest age reversal overall, 8,990 years older than the hypy date at the same depth. Two pairs of hypy ages also showed age reversals, with the smallest (a difference of 840 years) between the dates at 23 and 32 cm and the largest between the dates 90 and 105 cm (a difference of 1970 years). The only cellulose sample yielded a younger date in comparison to what was expected for that depth based on the other results (Table \@ref(tab:tb-one), Figure \@ref(fig:radiocarbon-gr2)).
+
+The difference between the ages from different fractions generally increased with depth (Table \@ref(tab:tb-four)). The only section of the core where all dating results overlap (except for the pollen concentrate) is at 6 cm, while the other five depths showed large differences between the results from different fractions, with the largest offset at 146 cm (a difference of 16,527 years), between hypy and pollen. The bulk organic fractions pretreated with standard ABA procedures also differed significantly from the hypy fraction (being up to 9,516 years younger than the former). Although not from the same depths (but within 10 cm), the modified ABA pretreatment yielded results that aligned closely with the hypy results at the two depths they were compared.
+
+In four out of six cases (the deepest samples), hypy yielded the oldest date from those available at that depth, and in two cases (the shallowest samples), hypy yielded the youngest results. Bulk organics (standard ABA) yielded the youngest result for four depths (43, 67, 137 and 146 cm). The pollen results were inconsistent, yielding the oldest and youngest dates at 6 cm and 146 cm, respectively (Table \@ref(tab:tb-four)). 
+
+```{r tb-one,echo = FALSE, eval=TRUE, include = TRUE,warning=FALSE}
+
+```
+(ref:tb-one) Conventional and calibrated dates from all samples tested in the study
+
+```{r tb-four,echo = FALSE, eval=TRUE, include = TRUE,warning=FALSE}
+
+```
+(ref:tb-four) Offset, minimum and maximum calibrated ages by depth
+
+```{r radiocarbon-gr2, out.width = '100%', fig.align = "center", fig.cap = "(ref:radiocarbon-gr2)",echo=FALSE}
+# e3 is in an_radiocarbon
+
+include_graphics(here("Figs","dates_RC_2.png"))
+
+```
+(ref:radiocarbon-gr2) Calibrated ages by depth and carbon fraction along the Sanamere sediment core
+
+## Discussion
+
+### Assessment of reliability
+
+The hypy dates yielded the oldest dates and the most consistent internal chronology with only two minor age reversals (at 23 and 90 cm). Although previous studies suggest that hypy dates could be biased to older ages due to potential for reservoir effects [@fieldUntanglingGeochronologicalComplexity2018], this study found this pre-treatment and its resulting carbon fraction (SPAC) to be the most reliable.
+
+All ages returned (except at 6 cm) following hypy pre-treatment are considerably older than dates from comparable levels for other carbon fractions. This finding is consistent with the results obtained from the radiocarbon dates from organic spring deposits in northwest Australia, where hypy ages were found to be older than other fractions, but also considered more reliable based on their more consistent age-depth relationship within each core [@fieldUntanglingGeochronologicalComplexity2018]. Hypy reduces labile organic matter to volatile products [@ascoughHydropyrolysisNewTool2009] and potentially removes > 92 % of all labile carbon [@birdEfficiencyCharcoalDecontamination2014]. Hypy represents the carbon fixed by pyrolysis at the time of a burning event, therefore the ‘indigenous’ or core component of the original charcoal [@ascoughHydropyrolysisNewTool2009; @ascoughHydropyrolysisImplicationsRadiocarbon2010]. 
+
+The hypy dates at 23 cm (7.798 - 8.162 ka) and 32 cm (7.292 - 7.425 ka) show an age reversal of 506 - 870 years (Figure \@ref(fig:radiocarbon-gr2)). These dates are from the section of the core that has high organic content, high pyrogenic carbon mass accumulation rates and large fluctuations in the normalized titanium counts (range 0.02 - 0.45). Both changes in erosion (as evidenced by clastic input) and high organic input at this time suggest that some reworking could have happened during this period, which coincides in timing with the flooding of the adjacent continental shelf in response to an increase in sea level during the early Holocene in north Australia [@slossHoloceneSealevelChange2018a; @chivasSealevelEnvironmentalChanges2001; @yokoyamaShorelineReconstructionAustralia2001; @reevesPalaeoenvironmentalChangeTropical2013], and therefore to a period of wetter climate, with potentially more intense seasonal rainfall events. More overland transport of soil material from the catchment, may well have transported ‘old’ charcoal into the lake at this time.  A second age reversal is present between results at 90 cm and 105 cm (1,100 years) in the hypy results, with the only apparent sedimentological indication of change being a slight decrease in the titanium counts down-core between these two depths. It is possible that the date at 105 cm exhibits an incomplete removal of exogenous carbon, the main issue identified when applying hypy pre-treatment to charcoal formed at 400°C or below [@birdEfficiencyCharcoalDecontamination2014].
+
+The results from fractions other than hypy at the same or comparable depths (except at 6 cm) were uniformly younger than the hypy results. Besides the possibility of the physical mobility of material in the sediment columns, it is likely that the differences between the ages of fractions at 43, 67, 137 and 146 cm are the result of unremoved contamination by carbon of a different, generally younger age in the bulk organics (standard treatment) and pollen fractions. The mobilization of materials and therefore, the contamination of samples with exogenous carbon is made more likely in the Sanamere sequence because the entire 31,000 years of accumulation is represented in only 172 cm of sediment. The top 43 cm contains high proportions of water, which also facilitates the mixing of materials by physical translocation and/or solubilization. 
+
+The results suggest that, for the majority of samples in this study, the standard ABA pretreatment was ineffective in removing modern contamination from the bulk organic fraction. An inbuilt 'reservoir' age associated with a period of storage in the lake catchment may have biased the hypy results to older ages by an unknown amount. However, it is unlikely that this could cause such large offsets between the hypy dates and dates from the other fractions. If there was a reservoir offset relating to a period of storage of up to 9,540 years in the catchment, this would manifest itself in the hypy dates throughout the sequence, whereas what is observed is a generally smaller offset up the core. Indeed, the uppermost hypy date the hypy date is younger than that of the other fractions, implying the circulation of carbon of an apparent age representative of all carbon in the sediment through the relatively thin sediment pile, such that dates high in the sequence are biased old and dates deeper in the sequence are biased young.
+
+Further evidence that there is no substantial reservoir effect on the hypy dates is provided by the observation that the two samples subject to the modified bulk organic pretreatment, where peroxide was used before standard ABA yielded results close to those obtained from the hypy fraction. Except for the anomalous charcoal result at 3 cm, and the slightly old pollen date at 6 cm, all dates from all fractions and pretreatments before 23 cm overlapped (when they belonged to the same depth), and did not show any age reversals. Below 23 cm, large offsets between samples from the same depth and age reversals were observed. 
+
+The increasing magnitude of the difference between hypy and the other fractions ages with depth/age is consistent with what would be expected for the younger samples having between 2 and 5 % unremoved modern contamination [@woodRevolutionConventionPresent2015], or more contamination of an older aggregate apparent age.
+
+The results strongly indicate the presence of unremoved exogenous carbon contamination in some of the fractions. For example, the largest offset between two fractions was found at 146 cm (16,685 years) between pollen and hypy, which suggests that pollen from higher depths mobilized down the core and/or the concentrate contained exogenous younger materials. The two pollen concentrate samples available show inconsistent results, as has been found in previous studies (younger [@fieldUntanglingGeochronologicalComplexity2018; @mayEstablishingChronologicalFramework2018] or older [@neuliebPotentialPitfallsPollen2013; @fletcherAMSRadiocarbonDating2017]), with the sample at 6 cm having the oldest date compared with the other fractions at the same depth, while the sample at 146 cm is the youngest compared to the bulk organics and hypy results. When inspected under the microscope, these samples appeared to be composed by around 50 % pollen, with the rest of material being plant material and charcoal. This addition of heterogeneously sourced materials could have added exogenous carbon contamination resulting in the aberrant results. Other studies also have identified anomalous, generally younger ages derived from pollen concentrates [@mayEstablishingChronologicalFramework2018; @clymoUpwashDownwashPollen1987] due to the high physical mobility of small particles but also the high porosity of the pollen walls, which can sorb and accumulate exogenous carbon [@kilianProblematic14CAMSDates2002a]. The existence of clearly anomalously young pollen dates strongly suggests that there is potential for contamination by young carbon in all the organic fractions.
+
+Large offsets (up to 9,504 years) were also found between bulk organics and hypy, with the former showing younger ages. This finding is consistent with previous studies which found that bulk organics pretreated with standard ABA can yield anomalously young dates [@wangRadiocarbonDatingSoil1996; @wustComparisonRadiocarbonAges2008; @pessendaRadiocarbonDatingTotal2001]. Although measured at 42 cm (not 43 cm as the other two fractions), the cellulose extraction yielded an age younger compared to what was expected from the bulk organics and hypy age-depth relationship. 
+
+While the results from micro and macro charcoal were expected to be tested along the entire core to better understand differences in their sources, their availability was limited below 82 cm.  As the age ranges obtained for both overlapped at 6 cm, the possibility that they represent different sources is low. The charcoal samples (>63 $\mu$m fraction) at 3 cm and 82 cm showed older and younger dates (respectively), compared to the age/depth relationships expected from the relationship determined by samples treated by hypy or modified ABA. It is possible that the incomplete removal of organic contaminants by the standard ABA method caused this offset. Given its large surface area and porosity, charcoal is known for absorbing exogenous carbon, which can undergo irreversible reactions with the charcoal surface. Charcoal is also suitable for microbial colonization, and microbial carbon cycling could also lead to the incorporation of exogenous carbon.
+
+### Developing a robust chronology
+
+While two age-depth models were built with the results from bulk organics (ABA) and hypy dates (Figure \@ref(fig:modelsb)), the model including only the hypy dates was the most consistent with the stratigraphic and sedimentologic changes identified in the Sanamere sequence (chapter \@ref(ch:sed)), and is preferred over what also appears to be a reliable chronology based on the bulk organic dates based on the discussion above. This model included 13 hypy samples (Table \@ref(tab:tb-one)), with all but two dates (23 cm and 105 cm) fitting within the 95 % confidence interval. The modelled ages ranged between 0.4 (3 cm) and 33 ka (162 cm). The peroxide+ABA pretreated bulk organics samples also agree reasonably well with the hypy-only model, including one of the dates fitting within the error range, and the other yielding a slightly older date (by 314 years). This further supports the reliability of the hypy results and bolsters the conclusion that old contamination has not affected the hypy results to any significant degree.
+
+The timing of changes in sedimentation rate inferred using the hypy model is consistent with the observed changes in sedimentology observed at 43 cm and 71 cm, which are the upper and lower bounds of two of the stratigraphic units observed in the Sanamere sequence (chapter \@ref(ch:sed), Figure \@ref(fig:modelsb)). Between 71 and 172 cm, there are no major sedimentological changes, (other than the inclusion of more coarse clastic fragments at 140 cm down-core). The charcoal samples (both particle sizes) were consistent with hypy dates at 6 cm, but not down-core. This inconsistency suggests that dates from unique pieces of charcoal pre-treated only by ABA could lead to biased results. Again, the hypy samples appear more reliable, as total pyrogenic carbon content measured using the hypy technique is less likely to be biased by individual charcoal fragments, each of which may have some (unknown) residence time prior to deposition in the lake sediment and/or degree of unremoved contamination.
+
+Although the age-depth model built with the standard ABA-pretreated bulk organics samples had no age-reversals, and a range between 4.1 to 22.3 ka, the modelled ages were not consistent with the stratigraphic changes in the Sanamere sequence (in contrast with the hypy model). Additionally, none of the pollen and cellulose samples fit within the age-model derived from the organics or bore any relationship to the observed stratigraphic units in the sequence, regardless of depth. These inconsistencies between pollen, cellulose and bulk organics dates suggest that results from any of these fractions are likely biased by unremoved contamination or physical translocation to a variable degree.
+
+Additional evidence to support the choice of the hypy model is its consistency with the timing of environmental events. For instance, the layer between 65 - 71 cm matches the time period between 18 - 20 ka, identified as a period of environmental change in regional studies. Strong evidence from paleoenvironmental studies has been found to support the dominance of cooler and drier conditions during this period in tropical Australasia [@reevesPalaeoenvironmentalChangeTropical2013;@turneyGeochemicalChangesRecorded2006a;@burrowsNewLateQuaternary2016a]. In contrast, this layer was modelled as 11 - 11.6 ka based on the age model derived from the bulk organics (ABA) curve. Moreover, the hypy chronology is consistent with the most likely timing for the formation of the lake ~ 33 ka. In this instance, a collapse in laterite karst formed a depression, as a result of lowered water tables that would accompany the rapid drop in sea level and drier conditions moving from MIS3 into MIS2 [@xuSealevelChangeDriver2019].
+
+```{r modelsb, out.width = '80%', fig.align = "center", fig.cap = "(ref:modelsb)",echo=FALSE}
+
+#include_graphics(here("Figs","models2.png"))#print(rc_figure)# from bacon SAN.
+#include_graphics(here("Figs","rc_figure.png"))
+include_graphics(here("Figs","models_RC_2.png"))
+```
+(ref:modelsb) Age-depth models (95 % confidence error bars) constructed using Bayesian age modelling with rbacon package in R. Chronology based on Hypy is represented in turquoise and chronology based on bulk organics in blue, along with the calibrated dates from additional carbon fractions, none used in the construction of either chronology.
+
+Finally, the results from this study highlight the importance of comparing the results from different fractions (when using radiocarbon dating) or contrasting the dates from multiple dating methods when building to support the construction of palaeoenvironmental proxy records and comparing results those derived from other dating methods. Caution should be exercised when interpreting chronologies derived from bulk organics carbon fractions. Although the chronology obtained using bulk organics with the standard ABA-pretreatment method appeared to be consistent and with no age reversals, hypy provides the most robust chronology for the Sanamere Lagoon sequence and indicate the bulk organics chronology to be incorrect.
+
+## Chapter summary
+
+The selection and pre-treatment of a reliable organic fraction from which to acquire radiocarbon dates is fundamental to the development of accurate and precise chronologies. Sampling from tropical lakes is particularly challenging given the adverse preservation conditions and diagenesis in these environments. This chapter examines and quantifies the differences between the radiocarbon date results and reliability from different carbon fractions and pretreatments from the same depths from Sanamere Lagoon, a tropical lake sediment core (1.72 m long)
+ 
+
+located in north Australia. Six different organic fractions (bulk organics, pollen concentrate, cellulose, stable polycyclic aromatic carbon (SPAC), charcoal >250 um and charcoal >63 um), for a total of 27 radiocarbon dates, were compared in six different depths along the core. Acid-base-acid (ABA), modified ABA (30 % hydrogen peroxide + ABA), 2chlorOx (a novel cellulose pre-treatment method) and hydrogen pyrolysis (hypy) were used to pre-treat the correspondent organic fractions.
+The oldest date is 31.3 ka and the youngest is 2.5 ka, spanning 29,247 years. The smallest offset between the minimum and the maximum age in a given depth was found to be 975 years (between SPAC and charcoal >63 um) and the largest 16,527 years (between pollen concentrate and SPAC). The SPAC fractions pre-treated with hypy yielded older ages compared to all other fraction in most cases, while bulk organics consistently yielded younger ages. The magnitude and consistency of the offsets and the physical and chemical properties of the tested organic fractions suggest that SPAC is the most reliable fraction to date in tropical lake sediments and that hypy successfully removes contamination sourced from exogenous carbon. 
+The Sanamere Lagoon chronology was built exclusively using samples pretreated with hypy. Hypy outperforms the other procedures to pretreat samples for radiocarbon dating, and it was the most consistent with the stratigraphical changes found in the core.
+
+```{r appendix1,out.width = '50%', fig.align = "center", fig.cap = "(ref:pyc1)",echo=FALSE, include=FALSE}
+
+include_graphics(here("Figs","pyc_depth.png"))
+```
+(ref:pyc1) Pyrogenic carbon mass accumulation rate
+
+
+```{r appendix2,out.width = '50%', fig.align = "center", fig.cap = "(ref:C)",echo=FALSE, include=FALSE}
+
+include_graphics(here("Figs","Rplot.png"))
+```
+(ref:C) Carbon content
+
+```{r appendix3,out.width = '50%', fig.align = "center", fig.cap = "(ref:Ti)",echo=FALSE, include=FALSE}
+
+include_graphics(here("Figs","Ti_counts.png"))
+```
+(ref:Ti) Normalized titanium counts in the Sanamere core
+
