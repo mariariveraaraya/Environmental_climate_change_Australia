@@ -15,7 +15,6 @@ Directories
     preprocessing/: contains the cleaning and wrangling of each dataset.
     processed_data/: final processed data and corresponding dictionaries.
     analysis/: R code used for the analyses and graphs. Some of the files in this directory contain code to produce graphs.
-    Rmd/: R Markdown source documents for thesis document.
     bib/: Bibliography files.
     img/: Images made with QGIS and other tools to illustrate ideas.
     short_overview: short presentation with a summary of the thesis outcomes
