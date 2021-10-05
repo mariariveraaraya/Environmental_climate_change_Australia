@@ -1,0 +1,151 @@
+---
+bibliography: [bib/Phytoliths.bib, bib/radiocarbon.bib, bib/hydrology.bib]
+csl: template/quaternary-geochronology.csl
+link-citations: yes
+linkcolor: blue
+fontsize: 12pt
+toc: false
+always_allow_html: true
+#toc: no
+output:
+  word_document: default
+  pdf_document: default
+  
+  
+---
+
+# Vegetation and fire dynamics of the northern Cape York tropical savannas over the last 33,000 years {#ch:vegetation}
+
+```{r veg, echo = FALSE, cache = FALSE, include = FALSE}
+library(knitr)
+library(here)
+library(bookdown)
+read_chunk('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/preprocessing/pre_phy.R')
+
+#need to include map with savannas..
+# need to include pictures of plants, examples of phytoliths with pictures, in TABLE 2 include which part of the plant was sampled, italic scientific names
+```
+
+```{r load-pkg-veg,echo = FALSE, cache = FALSE, include = FALSE}
+```
+
+## Introduction 
+
+Tropical savannas constitute 23 % of the Australian landmass and are home for a great part of the continent’s biodiversity [@cookHydroecologicalNaturalHeritage2011], including a broad range of plant species adapted to survive intense fires. The long-term fire and vegetation dynamics of these ecosystems constitute an important resource to understand modern patterns of ecological change, along with providing information to aid the validation of vegetation change models, and the improvement of vegetation and fire management practices in the region [@powerChangesFireRegimes2008]. The Australian tropics are the most fire‐prone regions in Australia [@bowmanBiogeographyAustralianMonsoon2010; @russell-smithAustralianSavannaFire2007; @russell-smithSeasonalityFireSeverity2006] and increased efforts have been made in the last decade to assess the role of environmental factors on fire patterns. While climate, biomass growth and human interventions have been identified as the modern drivers of fire regimes, little is known about past patterns of change [@reevesPalaeoenvironmentalChangeTropical2013]. During the last 30,000 years, important environmental changes impacted and altered the vegetation composition and fire abundance globally. However, most of the studies on the paleoecology of the tropics of Australia have provided Holocene records, covering ~ 12 ka or less. More inland records, covering the glacial and interglacial periods are required to track and better understand the dynamics between climate, vegetation and fire, and the local expressions of the proposed environmental changes that ocurred in the region.
+
+Vegetation is also one of the main drivers of fire. There are still disagreements regarding the climatic and vegetation responses that took place during the Last Glacial Maximum (LGM) in the area. Although the regional syntheses indicate that drier and cooler pre and glacial periods impacted the vegetation that was able to grow during these climatic conditions (mainly shrubs and herbs), recent studies suggest that the local climatic responses were highly variable [@tierneyMolecularPerspectiveLate2010]. For instance, several wet episodes, taking place during the LGM, have been identified in northern Australia and Indonesia, and the vegetation responses derived from these changes are still unknown. The available information for the preglacial and glacial periods in the northern Australian savannas is significantly limited, including low resolution and chronological uncertainties in the records [@marlonGlobalBiomassBurning2013], along with no studies yet published about vegetation and fire patterns. However, most studies agree that after the LGM, vegetation became more diverse as the precipitation and temperature increased. During the early Holocene, the evidence for different sites suggests the onset of modern vegetation, and fire activity was more frequent [@reevesPalaeoenvironmentalChangeTropical2013; @haberle23000yrPollen2005; @fieldCoherentPatternsEnvironmental2018; @stevensonLateQuaternaryRecord2001].  
+
+Fire records older than ~12 ka are scarce in the northern Australian tropics, and generalizations of the  biomass burning patterns in the area are based on records from the wet tropics (Atherton Tablelands, Papua New Guinea and Indonesia) [@haberleBiomassBurningIndonesia2001;@mooneyLateQuaternaryFire2011]. These studies suggest that fire was infrequent over the glacial and pre-glacial periods, and some sites show peaks on biomass burning around 16 ka, given the changes in temperature and precipitation. In northern Australia, the records from Big Willium (7.2 ka) [@stevensonPalaeoenvironmentalHistoryBig2015] and Girraween (9.7 and 7.7 ka) [@roweHoloceneSavannaDynamics2019] suggest increased burning during the middle Holocene, with variable patterns during the Late Holocene [@rowePalynologicalInvestigationHolocene2007; @roweLateHoloceneSwamp2015; @mooneyLateQuaternaryFire2011].
+
+Phytoliths have been increasingly used in plant paleoecology studies because of their potential to address changes in vegetation patterns, represent local vegetation growth and resistance to degradation in environmental conditions that are not favorable for preservation [@rashidPhytolithsProxies2019; @testePhytolithsNaachtunPeten2020]. Despite this potential, the use of phytoliths has been limited to a handful of studies in the region [@wallisOverviewLeafPhytolith2003; @wallisEnvironmentalHistoryNorthwest2001], and their usefulness remains unexploited. Moreover, the study of fire patterns mostly relies on the measurement of charcoal abundance in sediments, and particle counting manually or using computer-assistance [@conederaReconstructingFireRegimes2009a]. As an alternative, the abundance of pyrogenic carbon has been found to work as a conservative tracer of historical fire activity [@chellmanIncandescencebasedSingleparticleMethod2018] and identify similar fire activity signals compared to charcoal counting in northern Australia [@birdIdentifyingSavannaSignature2019], with the advantage of removing the time-consuming counting step.
+
+This paper contributes to the available vegetation and fire records using a phytolith and pyrogenic carbon-based reconstruction of the last 33,000 years for Sanamere lagoon in northern Cape York, Australia. This approach also allows the comparison with the geochemical results derived from isotopic value of the vegetation stored in the sediments, and the relationships that arise from their combination.
+
+## Methodology
+
+### Study area and fieldwork
+
+For general information about the study site, refer to chapter 3.
+
+### Vegetation inventory and analysis of modern reference material 
+
+A total of 23 plant species from 16 plant families were identified in a vegetation survey carried out in 50 m transects along 450 m south from the lake shore. Table \@ref(tab:tb-one-veg) presents the plant species distribution along these transects and their dominance. A group of 17 species collected during the survey was selected (based on their reported phytolith presence and their dominance on the studied transects) for the extraction of phytoliths to build a modern reference collection. Each part of the plant (stems, leaves) was analysed separately where possible. The plant parts were subjected to dry-ashing procedures [@pearsallPaleoethnobotanyHandbookProcedures2015; @pipernoPhytolithsComprehensiveGuide2006] in order to extract phytoliths. Table \@ref(tab:tb-two-veg) shows the selected plants and the correspondent morphologies associated with them. The morphological descriptions followed the guidelines provided by the International Code for Phytolith Nomenclature 2.0 [@neumannInternationalCodePhytolith2019].
+
+### Phytolith extraction, identification and classification
+
+The phytolith extraction followed the procedures described in previous studies [@alemanEstimatingPhytolithInflux2013; @pipernoPhytolithsComprehensiveGuide2006]. A minimum of 200 diagnostic phytoliths were counted per sample when possible. In cases where the count of 200 diagnostic phytoliths was not possible, a minimum count of 50 diagnostic phytoliths was considered in the interpretation. The fossil phytolith taxonomic identification was carried out using published photographs and descriptions [@neumannInternationalCodePhytolith2019; @wallisOverviewLeafPhytolith2003; @wallisEnvironmentalHistoryNorthwest2001] and standard literature [@pipernoPhytolithsComprehensiveGuide2006;@pipernoPlantMicrofossilsTheir1995].
+
+Phytolith morphologies were used to group plants into five categories. Short cell Poaceae (saddle, bilobate, trapezoid oblong), long cell Poaceae (bulliform, cuneiform bulliform), woody dicotyledon, monocots (grasses and sedges) and non-diagnostic phytoliths. When distinguishing between herbaceous monocots, grasses, sedges was not possible, these are listed as “monocots”, and when it was not possible to differentiate between woody herbs, shrubs and trees, these are listed as woody/arboreal.
+
+After calculating phytolith relative abundances, their distribution was divided into zones using hierarchical clustering and a broken stick model with the packages vegan [@oksanenVeganCommunityEcology2019] and rioja [@jugginsRiojaAnalysisQuaternary2017] in R, with Euclidean distance and constrained cluster analysis by the incremental sum of squares (CONISS) as the clustering method. The broken stick model separates the data into intervals and fits a separate line segment to each interval.
+
+### Pyrogenic carbon analyses and geochemical indicators
+
+Hydrogen pyrolysis (hypy) was used to determine the stable polycyclic aromatic carbon content of the samples (PyC) [@birdPyrogenicCarbonCycle2015]. Solid ∼1–15 mg samples were loaded with a Mo catalyst (∼5 – 10 % of sample mass) using an aqueous/methanol solution of ammonium dioxydithiomolybdate [(NH~4~)~2~MoO~2~S~2~]. The dried catalyst-loaded samples were placed in the hypy reactor and pressurized to 150 MPa of hydrogen gas with a sweep gas flow of 5 L min−1, then heated at 300 °C/min to 250 °C, then 8 °C/min until a final hold temperature of 550 °C which was maintained for 2 min. The carbon content of the sample before and after hydrogen pyrolysis was used to calculate PyC content as a fraction of total organic carbon with an error of ± 5 % [@meredithAssessmentHydropyrolysisMethod2012a; @wursterQuantifyingAbundanceStable2012]. PyC mass accumulation rates (PYC MAR) were calculated using the age-depth model developed for Sanamere (chapter 5). The $\delta$^13^C of pyrogenic carbon ($\delta$^13^PyC) was used to make inferences about the vegetation being burnt. The $\delta$^13^C of total organic carbon ($\delta$^13^C~TOC~) was used as an indicator of the organic matter source that was accumulated in the lake sediments. The $\delta$^13^C values were calculated using the procedures described in chapter 6.
+
+## Results
+
+### Phytolith identification and classification 
+
+The diversity of taxa was represented by 18 different morphotypes identified across the Sanamere sequence. Figure \@ref(fig:fig-phy) presents the relative abundances of the five main groups with the 18 morphotypes associated to the correspondent group, along with the zone delineation derived from the clustering analysis. The samples younger than 6.7 ka did not yield the ideal number of diagnostic phytoliths to infer reliable conclusions. However, because these samples were composed in majority by globular echinate phytoliths (> 70 %), they were included in the diagram, as the main purpose of the analysis was to infer the relative vegetation composition of the samples.
+
+Woody taxa was dominated mostly by globular echinate phytoliths, while blocky faceted cells were found in low concentrations (< 16 %) in all samples. Poaceae (short and long silica cells) taxa were identified in relative abundances (less than 30 %) in all cases, with the highest percentages found at 9.6 ka and 22.6 ka. Grass silica short cells were only identified in three samples, all in relative abundances less than 11 %. Grasses and sedges (elongate blocky, entire cylindrical, facetated, psilate and rugose) were dominant at 30.8, 28.1, 21, 20.4, 13.9, 8.8 and 7.2 ka, including high abundances of elongate rugose phytoliths. Relative counts of non-diagnostic morphologies (acicular, elongate echinate, elongate sinuous, elongate sinuate, and tracheids) varied across the sequence, with the highest relative abundance at 23.7 ka (58 %).
+
+Phytolith concentration also varied widely across the sequence with the highest values represented at the beginning of the sequence (30.8 ka) and between 21.4 and 20.4 ka (Figure \@ref(fig:pyc)). Concentration decreased steadily from  21.4 ka, and low values were maintained, with exceptions at 13.8 and 7 ka.
+
+The hierarchical clustering identified five zones within the phytolith distribution.  Between the beginning of the sequence and 20.6 ka, the phytolith assemblage was dominated by phytoliths associated with grasses and sedges, especially the elongate rugose morphotype. The second zone (20.6 ka to 18.7 ka) presents a decline in this cell type and shows an increment in woody taxa and a peak in Poaceae (both short and long cells). Subsequently, woody taxa prevailed until 18.7 ka, from where grasses, sedges and Poaceae increased and had an even distribution until 8 ka. Grasses/sedges reached 90 % of the total abundance, while Poaceae also incremented during this period, to reach 36 % at 9.9 ka. Between 8 and 7.3 ka, there is no evidence of the presence of Poaceae cells, while woody taxa returned to dominate. Finally, the zone between 7.3 ka – Present, and especially from 7 ka (> 70 %) is dominated by phytoliths from woody taxa, especially globular echinate. 
+
+### Pyrogenic carbon and geochemical indicators
+
+Fire activity was recorded using pyrogenic carbon mass accumulation rates as a proxy (Figure \@ref(fig:pyc)). Major fire events were identified at 9.3,7.1- 7.4 ka and 4.7, while minor events were found at 31.4, 24.9 and 15.8 ka. The results also suggest periods of very low fire activity between 30.8 - 25.5 ka and 22 - 9.3 ka.
+The $\delta$^13^PyC ranged between -25.5 and -23.0 ‰ and were most enriched between 26.5 and 24 ka and at 9 ka, while the $\delta$^13^C~TOC~ values fluctuated between -27.4 and -23.7 ‰. The most enriched values were found before 21 ka. Only weak correlations were found between the geochemical parameters. The abundance of TOC is not correlated to the abundance of PyC (r^2^ = 0.27), either the $\delta$^13^C~TOC~ and $\delta$^13^PyC (r^2^ =0.15), even when it was calculated only for the period of time when terrestrial input was found to be dominant (4.7 - 10 ka) (r^2^= 0.3) (Figure \@ref(fig:corr)). A detailed description of geochemical record of Sanamere has been given in chapter 6.
+
+Total organic carbon and nitrogen abundance remained low through the sequence until the period 9.3 - 4.9 ka, where there is an important increase, and values ranged between 41 % and 13.8 %. The highest carbon values (~41%) were reached at 7 ka. C:N ratios suggest a similar pattern, with the main contribution of terrestrial plants between the same period, with ratios above 20. According to the C:N ratio, the lake accumulated a mixture of aquatic and terrestrial input until 9.8 ka, from where terrestrial input was substantial. Grasses and sedges had a spike and from here this date and after 7 ka woody species became dominant. 
+
+## Discussion
+
+This paper aimed to describe the fire and vegetation changes reflected in the sediments of Sanamere lagoon in northern Australia using pyrogenic carbon mass accumulation rates and phytolith analysis. The pyrogenic carbon record has proven to be a reliable proxy for biomass burning [@birdIdentifyingSavannaSignature2019] and catchment fire occurrence and/or abundance [@roweHoloceneSavannaDynamics2019]. 
+
+The Sanamere sequence suggests the presence of low fire activity from the beginning of the record and 24.7 ka, with a peak in activity at 31.3 ka. After 24.7 ka, the activity decreases, subsequently increments at 24.1 ka and decreases consistently to then reach a minimum at 19.7 ka. The period between 24.1 and 9.7 ka presents infrequent fire activity, except for a low-intensity peak at 16.4 ka. This fire regime pattern is consistent with both the composite charcoal curve from Australian mainland sites [@mooneyLateQuaternaryFire2011] and the local records available for the Atherton Tablelands [@haberle23000yrPollen2005; @kershawCompletePollenRecord2007], all suggesting similar timing and patterns of biomass burning. 
+
+Grasses and sedges (probably dryland and swamp herbs) dominated the period between 31 and 23.6 ka, with an exception at 26.4 ka, where woody taxa were dominant. This vegetation cover is consistent with the climatic reconstruction for Sanamere and the region, which indicates a cooler, period between 29 - 19.8 ka (chapter 6). The time between 23.6 and 20.6 ka was represented by variations in the representation of the different plant groups, and between 20.6 and 18.6 ka woody taxa tended to dominate, likely sustained by low precipitation, and a drier, inactive monsoon (19.8 – 18.2 ka). The records from Lake Euramoo and Lynch’s Crater show also the presence of woodland communities (sclerophyll) during this period, which supports the possibility of low precipitation, including low charcoal densities [@haberle23000yrPollen2005; @kershawCompletePollenRecord2007].
+
+Between 16.4 – 9.7 ka, the Sanamere record is congruent with the low burning biomass activity recorded by other studies in the Australasian tropical region, but differs from the local records from the Tablelands and the Malesian sector (including the eastern Indonesian archipelago and Papua New Guinea) [@haberleBiomassBurningIndonesia2001], which report increased charcoal accumulation rates between 16.8 and 7 ka. In Sanamere, grasses and sedges continued to dominate between 18.6 – 8 ka, although at 9.7 ka the vegetation represented is more diverse, with Poaceae, woody and grasses/sedges evenly distributed.  This variation was probably sustained by the changes in climatic conditions, which allowed the growth of new taxa around Sanamere. 
+
+This increase in the availability and diversity of biomass to burn is reflected in the fire activity in Sanamere, which had a moderate peak at 9.5 ka, to then return to low values between 9.5 and 7.7 ka. The period between 7.7 and 7.1 ka presents the highest accumulation rates of pyrogenic carbon of the sequence, which is also consistent with the tropical regional fire composite reconstructions and the record from Lake Euramoo in the wet tropics of northern Australia, which suggests high fire activity between 9.3 and 7 ka. The record from Big Willium in Weipa shows also high microcharcoal accumulation between 7.5 and 6.5 ka. This increase in fire activity is associated with an important change in the vegetation assemblage at Sanamere, which switched from high amounts of grasses and sedges to a dominance of woody taxa. This trend continues until the end of the sequence (except at 6.8 ka, where the relative abundances are more even), but also with an important decrease in the concentration of phytoliths, which is likely the result of the expansion of the lake (less grains were able to the stored at the lake center). The C:N ratio also reflects the increased contribution of terrestrial plants to the sediments in the lake (Figure \@ref(fig:pyc)). The increases in fire activity and vegetation followed the increment in precipitation suggested by the climatological changes identified at the site during this period.
+
+In regard to fire patterns, although the composite charcoal index for the tropical region [@mooneyLateQuaternaryFire2011] reports an important decrease in fire activity between 7 and 5 ka, the Sanamere record shows only a slight decrease (6.9 ka), with high fire activity recorded until 4.4 ka (including a peak at 5 ka), after which another decline is evident. While values increase slightly at 4.4 ka, they stayed significantly lower compared to the highest peaks between 7.1 – 7.4 ka. Similarly to the record in Big Willium in Weipa [@stevensonPalaeoenvironmentalHistoryBig2015], the Sanamere sequence suggests that the vegetation remained unchanged from 6.8 ka (5.7 ka in Big Willium).  In parallel to the fire events  between 4.9 – 4.3 ka, the geochemical evidence starting at 4.9 cal BP indicates the permanent expansion of the lake, including the return of the C:N ratio to values below 20 (indicating the input of aquatic plants), which suggests an increase in the contribution of aquatic plants to the lake sequence. Regional studies have reported intense climatic variability around 4.2 ka, which would also support the occurrence of these changes [@marchantRapidEnvironmentalChange2004].
+
+The $\delta$^13^PyC and $\delta$^13^C~TOC~ values were consistent with the dominance of C3 vegetation (grasses and sedges) around the lake. The $\delta$^13^PyC also confirmed the vegetation burnt in the lake catchment was predominantly C3. However, the relationship is unlikely to be direct due to fractionation processes during initial pyrolysis and subsequent transport. The $\delta$^13^PyC and $\delta$^13^C~TOC~ values were not correlated, either the abundance of TOC to the abundance of PyC (Figure \@ref(fig:corr)). These results suggest that the autochthonous production of carbon withing the lake (expected to be minimal) contributed to the isotopic signature of the sediments, which had an influence in both the carbon isotopic values and the abundance of TOC. 
+
+Although these results highlight the potential of phytoliths to reconstruct past vegetation, phytolith analysis is potentially biased given their production, transport and preservation [@bremondAdvantagesDisadvantagesPhytolith2004; @strombergPhytolithsPaleoecologyAnalytical2018]. Furthermore, the resolution at which phytoliths allow identification prevents a finer identification of the families/species present during this time. In the Sanamere context, the most important bias is the poorly resolved taxonomy associated with woody taxa and dicotyledonous herbs and the over-representation of grasses compared to other groups. Because Sanamere was dominated by non-grass species, the level of identification was limited to broad plant groups. Moreover, no correlation between phytolith concentration and PyC MAR was found in the Sanamere record, which confirms this possible bias. Using alternative microfossil analyses such as pollen would increase the resolution of the identified vegetation taxa at Sanamere. 
+
+## Conclusions
+
+Phytolith and pyrogenic carbon analysis increased our understanding of the vegetation and fire dynamics reflected in the Sanamere lake sediments. While grasses and sedges are the first type of vegetation to emerge in the catchment surrounding Sanamere, the presence of arboreal taxa starts around 26 ka, at a time where drier and cooler conditions seemed to prevail in the area. Poaceae species also appear for the first time during this phase. The three groups co-habited until the middle Holocene, where arboreal taxa started to dominate the assemblage. From around 20 ka arboreal taxa decrease, and grasses/sedges became more predominant, in accordance with the drier period identified between 19.8 – 18.2 ka. Despite the evidence for wetter conditions between 18.2 and 9.6 ka, grasses and sedges were the major species at the site. After 9.7 ka, and particularly after 7.2 ka, arboreal/woody taxa were the principal species in the catchment, which is consistent with the development of a wetter phase through the Late and Middle Holocene. Wetter conditions sustained the development of more arboreal taxa over the Holocene, compared to previous periods.
+
+The results from the isotopic analyses and phytoliths are consistent with the predominance of C3 plant species in the Sanamere sequence. C4 species are absent from the isotopic records, while the phytoliths suggest a minimal presence of C4 (Poaceae) species at the site. The $\delta$^13^PyC values confirm that the vegetation being burnt is also C3. 
+
+Fires appear to be infrequent before the Holocene, with exceptions at 31.8 , 24.9 and 16 ka. These peaks in fire activity are independent of phytolith concentration, which confirm these events reflect higher fire abundance. Several fire events were identified during the late and middle Holocene, a finding that is consistent with the results from other studies in the region. The record of pyrogenic mass accumulation rates at Sanamere is consistent with the general trends indicated by the regional reconstructions.
+
+## References
+
+```{r modern-reference,echo = FALSE, cache = FALSE, include = FALSE}
+```
+
+```{r tb-one-veg,echo = FALSE, eval=TRUE, include = TRUE,warning=FALSE}
+```
+(ref:tb-one-veg) Vegetation inventory and modern reference material of Sanamere Lagoon catchment
+
+```{r tb-two-veg,echo = FALSE, eval=TRUE, include = TRUE,warning=FALSE}
+```
+(ref:tb-two-veg) Phytolith morphologies of modern plants surrounding Sanamere Lagoon
+
+```{r fig-phy,out.width = '100%', fig.align = "center", fig.cap = "(ref:fig-phy)",echo=FALSE}
+#library(knitr)
+include_graphics("other/Phy/Fig2_d.png")
+```
+(ref:fig-phy) Relative abundances of phytolith morphologies and plant groups
+
+```{r pre-phy,echo = FALSE, cache = FALSE, include = FALSE}
+```
+
+```{r conc, echo=FALSE, fig.align="center", fig.cap="(ref:conc)", fig.height=4, fig.width=2, out.width='80%',include=FALSE}
+#print(plot_conc1)
+```
+(ref:conc) Phytolith concentration (counts/g)
+
+```{r pyc,out.width = '100%', fig.align = "center", fig.cap = "(ref:pyc)",echo=FALSE}
+#print(fig3)
+#include_graphics("other/Phy/Rplot.png")
+#include_graphics("other/Phy/Rplot.png")
+include_graphics("other/Phy/fig33.png")
+
+```
+(ref:pyc) Pyrogenic carbon mass accumulation rate (ug mm^2^/yr); C:N ratio; Carbon percentage, Phytolith concentration (counts/g), δ^13^C~OM~ value and δ^13^PyC
+
+```{r corr, out.width = '80%', fig.align = "center", fig.cap = "(ref:corr)",echo=FALSE}
+print(fig4)
+```
+(ref:corr) Relationships between (a) PyC abundance and TO and (b) δ^13^PyC value and δ^13^C~OM~
+
