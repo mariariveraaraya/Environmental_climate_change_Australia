@@ -21,10 +21,6 @@ plant_group<-c("Woody dicotyledons (Arecaceae?)","Non_diagnostic","Non_diagnosti
 df<-data.frame(morphotype,plant_group)
 
 
-#next step is to count "wood" or globular granulate phytoliths
-#check thesis to see what it means to have the different types ??? of phytoliths
-
-
 diatoms_counts<-read.csv(here("experiments", "exp_diatoms","data", "Counts_diatoms_08_08_19.csv"))
 
 diatoms_photo<-read.csv(here("experiments", "exp_diatoms","data", "Photos_silica.csv"))
@@ -39,19 +35,6 @@ diatoms_counts$final_morphotype <- paste(diatoms_counts$Morphotype,diatoms_count
 diat_merge<-merge(diatoms_counts,conc,by="Identifier")
 
 
-#####Modern reference
-
-#Phytoliths
-#phy_2<-diat_merge%>%
-#     #select(Identifier,Type,Genus,Species2,Counts,Total_sediment_analysed_g,Number_of_transects)%>%
-#      filter(Type=='Phytoliths')%>% 
-#     group_by(Identifier)%>%
-#    mutate(Corrected_counts=Counts/Total_sediment_analysed_g)%>%
-#   mutate(countT= sum(Corrected_counts),countT2=sum(Counts)) %>%
-#   mutate(per=paste0(round(100*Corrected_counts/countT,2)))%>%
-#   mutate(phy_g_wet_sed = countT2/Total_sediment_analysed_g)%>%
-#   mutate(corr_trans= countT2/Number_of_transects)%>%
-#  filter(countT2 > 0)
 
 morphotype<-c("Globular echinate","Elongate echinate", "Elongate sinuous", "Globular psilate", "Hair", "Tracheids", "Blocky faceted", "Blocky polyhedron","Globular decorated","Parallelepiped blocky","Cyperaceae","Elongate psilate","Elongate facetated")
 
@@ -59,11 +42,7 @@ plant_group<-c("Woody dicotyledons (Arecaceae?)","Non_diagnostic","Non_diagnosti
 
 df<-data.frame(morphotype,plant_group)
 
-#next step is to count "wood" or globular granulate phytoliths
-#check thesis to see what it means to have the different types ??? of phytoliths
 
-
-#At least for cluster analysis...filter non_diag and total counts >50?
 
 phy_2<-diat_merge%>%
         select(Identifier,Type,Genus,Species2,Counts,Total_sediment_analysed_g,Number_of_transects,final_morphotype)%>%
@@ -124,25 +103,6 @@ phy_2$per <- as.numeric(as.character(phy_2$per))
 phy_2_age<-left_join(phy_2,agedepth2)
 
 phy_all<-ggplot(phy_2_age, aes(x=median,y=per, color=final_morphotype))+geom_point()+ scale_color_hue(h = c(80, 1000))
-
-#phy_all
-
-#ggplotly(phy_all)
-
-#str(phy_2$per)
-#silica skeleton/elongate psilate
-#phy21$final_morphotype
-
-#Collapse factor levels into manually defined groups
-
-#fct_collapse(x, Yes = c("Y", "Yes"), No = c("N", "No"), NULL = "H")
-#fun <- function(z) {
-#z[z == "Y"] <- "Yes"
-#z[z == "N"] <- "No"
-#z[!(z %in% c("Yes", "No"))] <- NA
-#z
-#}
-#fct_relabel(factor(x), fun)
 
 
 phy_2_<-phy_2
@@ -222,13 +182,6 @@ zones4=c(7.3,8,18.7,20.6)
 zones5=c(9.7,19.8,29)
 
 zones5=c(9.7,18.2,29)
-
-
-
-#BAR2_merge2 <- Stratiplot(Identifier~ . , data= chooseTaxa(phy_mor, max.abun = 2, n.occ = 1),
- #                         type = c("h","g"), sort = "var",svar=x2,xlab="Relative percentage (%)",ylab="Age (cal yr BP)")
-
-
 
 
 phy_mor2<-phy_mor%>%
@@ -358,18 +311,6 @@ dev.off()
 
 ?Stratiplot
 phy21<-phy_2
-#gssc<-c("Saddle","Bilobate","Trapezoid oblong")
-#poaceae<-c("bulliform","Cuneiform bulliform")
-#non_diag<-c("Acicular","Elongate echinate", "Elongate sinuous", "Elongate sinuate","Tracheids")
-#grasses_sedges<-c("cylindroid", "Elongate entire", "Elongate psilate", "Elongate facetated")
-#woody<-c("Globular granulate", "3D")
-
-#globular granulate = globular decorated
-
-#elongate blocky = elongate psilate = elongate rugose = elongate entire
-
-####Transform to ICPN 2.0
-#https://academic.oup.com/aob/article/124/2/189/5537002
 
 
 phy_gssc<-filter(phy_2, final_morphotype == 'Saddle '|final_morphotype == 'Bilobate '|final_morphotype == 'Trapezoid oblong' )
@@ -472,30 +413,11 @@ cluster_phy<-phy211_a%>%
         unique()
         
 
-        #spread(final_morphotype,perTfinal)%>%
-        #left_join(agedepth2)%>%
-        #select(Identifier,grasses_sedges,gssc,non_diag,poaceae,woody,median)
-       
-#cluster_group<-cluster_phy%>%
- #       group_by(Identifier,final_morphotype)%>%
-  #      mutate(new=sum(perTfinal))%>%
-   #     select(Identifier,final_morphotype,new)%>%
-    #    unique()
-
-
 cluster_group<- cluster_phy%>%
         spread(final_morphotype,total)%>%
         ungroup()
 
-#cluster_phy[is.na(cluster_phy)] <- 0
 
-
-#cluster_phy2<-group_by(cluster_phy,Identifier)
-
-#cluster_phy2<- aggregate(x=cluster_phy[,2:6], by=list(Identifier=cluster_phy$Identifier), median,na.rm = TRUE)
-
-#cluster_phy2<- aggregate()
-#cluster_phy2<- gsub(cluster_phy2,"NaN","0")
 cluster_phy2<-cluster_group
 
 cluster_phy2[is.na(cluster_phy2)] = 0
@@ -547,20 +469,11 @@ c1 <- cutree(clust_phy, k=ngroups1)
 
 
 
-#x<-strat.plot(cluster_phy3, yvar=cluster_phy4$median, clust=clust_phy, y.rev=TRUE, cex.axis=0.8, cex.yaxis=0.8, cex.ylabel=0.8, cex.lab=0.8, ylab="ka cal BP (yr)",col.line="black", col.bar="black", las=3, mgp=c(3,1,0))
-
-#?strat.plot
-
 
 
 cluster_phy4$median <- cluster_phy2$median
 cluster_phy4$clust <- c1
 
-#addClustZone(x, clust_phy, nZone=ngroups1, col=rainbow(length(z))[rank(z)])
-#c1 <- cutree(clust_phy, k=ngroups1)
-
-#cluster_phy4$age <- ages_final_ITRAX2$median
-#cluster_phy3$depth <- diat_depth$Depth
 
 
 
@@ -702,14 +615,14 @@ phy_444
 #            qmethod = "double")
 
 #tog2<-read.csv("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/experiments/exp_grain/data/together.csv",header = TRUE, sep = ",", row.names = 1)
-tog2<-read.csv("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/experiments/exp_grain/data/together2.csv",header = TRUE, sep = ",", row.names = 1)
+tog2<-read.csv("experiments/exp_grain/data/together2.csv",header = TRUE, sep = ",", row.names = 1)
 
 
 #write.table(Hypy.selected5, file = "C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/experiments/exp_Hypy/data/Hypy.selected5.csv",
 #            sep = ",", col.names = NA,
 #           qmethod = "double")
 
-hypy_phy<-read.csv("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/experiments/exp_Hypy/data/Hypy.selected5.csv",header = TRUE, sep = ",", row.names = 1)
+hypy_phy<-read.csv("experiments/exp_Hypy/data/Hypy.selected5.csv",header = TRUE, sep = ",", row.names = 1)
 
 tog22<-tog2%>%
         select(Identifier,averaged.C.N,averaged.C)
@@ -725,13 +638,6 @@ tog4<-tog3%>%
         drop_na(Identifier)
 
 str(tog22)
-#hypy_phy12<-phy_conc%>%
- #       select(Identifier,phy_g_wet_sed,Depth)%>%
-  #   full_join(tog3,by="Identifier")%>%
-   #     full_join(tog22,by="median")%>%
-    #   # select()%>%
-     #   unique()%>%
-      #  arrange()
 
 hypy_phy12<-phy_conc%>%
         select(Identifier,phy_g_wet_sed)%>%
@@ -793,9 +699,6 @@ pyc_fig<-pyc2 %>%
         theme_bw(base_size = 25)+ theme(panel.grid.major = element_blank())+
  theme(axis.title.y =element_text(size=24),
         strip.text = element_text(size = 24))
-#?theme
-#\\n (ug mm2/yr)
-#?facet_wrap
 
 print(pyc_fig)
 
@@ -1048,13 +951,6 @@ hypy_trial<-hypy_phy12%>%
         filter(median>10000)%>%
         na.omit()
 
-#lm_toc2<-lm(hypy_trial$phy_g_wet_sed ~ hypy_trial$PyCxMAR)
-
-#summary(lm_toc2)
-
-#phy_445<-ggplot(phy_222, aes(y=Depth,(x=sqrt(phy_g_wet_sed))))+geom_point() +  scale_y_reverse(breaks = seq(0, 175, by = 10))  + ggtitle("")+xlab("Sqrt of Concentration (diat/g)")+ylab("Age (cal yr BP)")+theme_bw() + theme(axis.text.x=element_text(size=12),axis.title.x=element_text(size=12,face="bold"),axis.title.y = element_text(size=12,face="bold"))
-
-#phy_445
 
 
 hypy_phy<-merge(phy_conc,Hypy.selected5)%>%
@@ -1118,38 +1014,6 @@ grid.arrange(plot_hypy_median_b,plot_hypy_median_c,nrow=1,ncol=2)
 h<-cor(hypy_phy)
 
 
-
-
-#corrplot(h,method = "number")
-
-#hypy_phy2<-ggplot(hypy_phy, aes(y=PyCxMAR,(x=phy_g_wet_sed)))+geom_line()  + ggtitle("")+xlab("Sqrt of Concentration (diat/g)")+ylab("Age (cal yr BP)")+theme_bw() + theme(axis.text.x=element_text(size=12),axis.title.x=element_text(size=12,face="bold"),axis.title.y = element_text(size=12,face="bold"))
-
-#hypy_phy2
-
-######Phytoliths just globular granulate
-#phy_4<-diat_merge%>%
- #       #select(Identifier,Type,Genus,Species2,Counts,Total_sediment_analysed_g,Number_of_transects)%>%
-  #      filter(final_morphotype=='Globular granulate')%>% 
-   #     group_by(Identifier)%>%
-    #    mutate(Corrected_counts=Counts/Total_sediment_analysed_g)%>%
-     #   mutate(countT= sum(Corrected_counts),countT2=sum(Counts)) %>%
-      #  mutate(per=paste0(round(100*Corrected_counts/countT,2)))%>%
-       # mutate(glob_g_wet_sed = countT2/Total_sediment_analysed_g)%>%
-        #mutate(corr_trans= countT2/Number_of_transects)%>%
-        #filter(countT2 > 0)
-
-#phy_44<-left_join(phy_4,agedepth2)
-#phy_443<-ggplot(phy_44, aes(x=phy_44$median,y=sqrt(glob_g_wet_sed)))+geom_point()
-
-#ggplotly(phy_443)
-
-#phy_333 <- ggplot(phy_222, aes(x=phy_222$median,y=spi_g_wet_sed))+geom_point() 
-#phy_333
-
-
-
-
-
 ## ---- modern-reference
 
 # Isachne confusa was added as SAN 350 Poaceae and Thaumastochloa major SAN 450
@@ -1200,13 +1064,7 @@ table2_aa<-table2_a%>%
 
 ## ---- tb-one-veg
 
-#        gsub("SAN","", Distance_from_lake)
 
-#table1$Distance_from_lake <- gsub("SAN", "", table1$Distance_from_lake)
-
-#table1$Distance_from_lake <- as.numeric(as.character(table1$Distance_from_lake))
-
-#maybe include plant part sampled and type (shrub, tree)
 table1_2%>%
         arrange(`Distance from lake (m)`)%>%
         knitr::kable("latex",booktabs = TRUE, caption = "(ref:tb-one-veg)", linesep = "")%>%
@@ -1219,14 +1077,6 @@ table2_aa%>%
         arrange(`Distance from lake (m)`)%>%
         knitr::kable("latex",booktabs = TRUE, caption = "(ref:tb-two-veg)", linesep = "")%>%
         kableExtra::kable_styling(position = "center", latex_options= "scale_down")
-#table2$Distance_from_lake <- gsub("SAN", "", table2$Distance_from_lake)
-
-#table2$Distance_from_lake <- as.numeric(as.character(table2$Distance_from_lake))        
-
-
-#table2$Common_name <- gsub("", "Pandanus", table2$Common_name)
-#table2<-table2%>%
- #       mutate(`Common_name`==ifelse(Sci_name=="Pandanus tectorius","Pandanus",`Common_name`))
 
 
 ##---- extra
@@ -1234,7 +1084,7 @@ table2_aa%>%
 phy_modern2<-phy_modern%>%
         filter(Sci_name!="")
 
-?read_chunk
+
 # 20 different species
 length(unique(phy_modern2$Sci_name))
 
@@ -1246,9 +1096,7 @@ phy_modern3<-phy_modern%>%
 phy_modern5<-phy_modern%>%
         filter(Phy_Presence=="1"|Phy_Presence=="0"|Phy_Presence=="X")
 
-#length(unique(phy_modern4))
-#https://davekimble.net/rainforest/pandanus.htm
-#with phytoliths/ 2 poaceae, pandanus, palm+p
+
 print(unique(phy_modern4$Family))
 
 #table include Commom_name, Family, Sci_name, Phy_abundance, Modern_reference,Phy_presence

@@ -28,15 +28,11 @@ library(officer)
 table_plants<-regulartable(table1_2)
 table_plants2<-theme_vanilla(set_table_properties(table_plants, width=1,layout = "autofit"))
 table_plants3<-italic(table_plants2,j=3)
-#word_export <- read_docx()
-#body_add_flextable(word_export, table7)
-#body_add_par(word_export, value = "")
-
-#print(word_export, target= here("data", "table_ch5_2.docx"))        
+  
 
 save_as_docx(table_plants3, path = here("data", "table_ch6_1.docx"))
 
-#?rename
+
 table2<-phy_modern%>%
         filter(Phy_Presence==1)%>%
         select(Distance_from_lake,Common_name,Sci_name,Family)%>%
@@ -60,22 +56,12 @@ table2_aa<-table2_a%>%
 table_plants_a<-regulartable(table2_aa)
 table_plants_b<-theme_vanilla(set_table_properties(table_plants_a, width=1,layout = "autofit"))
 table_plants_c<-italic(table_plants_b,j=3)
-#word_export <- read_docx()
-#body_add_flextable(word_export, table7)
-#body_add_par(word_export, value = "")
 
-#print(word_export, target= here("data", "table_ch5_2.docx"))        
 
 save_as_docx(table_plants_c, path = here("data", "table_ch6_2.docx"))
 ## ---- tb-veg
 
-#        gsub("SAN","", Distance_from_lake)
 
-#table1$Distance_from_lake <- gsub("SAN", "", table1$Distance_from_lake)
-
-#table1$Distance_from_lake <- as.numeric(as.character(table1$Distance_from_lake))
-
-#maybe include plant part sampled and type (shrub, tree)
 table1_2%>%
         arrange(`Distance from lake (m)`)%>%
         knitr::kable("latex",booktabs = TRUE, caption = "(ref:tb-veg)", linesep = "")%>%
@@ -89,11 +75,3 @@ table2_aa%>%
         knitr::kable("latex",booktabs = TRUE, caption = "(ref:tb-two-veg)", linesep = "")%>%
         kableExtra::kable_styling(position = "center", latex_options= "scale_down")%>%
         column_spec(3, italic  = T) 
-#table2$Distance_from_lake <- gsub("SAN", "", table2$Distance_from_lake)
-
-#table2$Distance_from_lake <- as.numeric(as.character(table2$Distance_from_lake))        
-
-
-#table2$Common_name <- gsub("", "Pandanus", table2$Common_name)
-#table2<-table2%>%
-#       mutate(`Common_name`==ifelse(Sci_name=="Pandanus tectorius","Pandanus",`Common_name`))

@@ -5,20 +5,13 @@ library(readxl)
 library(plotly)
 
 #Hypy section
-source('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/preprocessing/pre_age_model.R')
-source('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/preprocessing/pre_MAR.R')
+source('preprocessing/pre_age_model.R')
+source('preprocessing/pre_MAR.R')
+
+Hypy.post<-read.csv('experiments/exp_EA/data/Copy of Maria 180831 reduction(19306).csv',na.strings=c("NA","#DIV/0!",""))
 
 
-#replacement_depths_itrax_2<-read.csv("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Bulk density/replacement depths itrax_2.csv")
-#In the first part of the analysis, the percentage of pyrogenic carbon in the sample is calculated.
-#the second part involves the correction of de d13C values. Emma/Jordahna provided a script.
-
-#Hypy rawreadxl#This is posthypy
-#will need to merge with prehypy?
-Hypy.post<-read.csv('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Hypy/Ea runs/Copy of Maria 180831 reduction(19306).csv',na.strings=c("NA","#DIV/0!",""))
-
-
-Hypy.post1<-read.csv('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Hypy/Ea runs/190314.PostHypy.csv',na.strings=c("NA","#DIV/0!",""))
+Hypy.post1<-read.csv('experiments/exp_Hypy/data/190314.PostHypy.csv',na.strings=c("NA","#DIV/0!",""))
 
 
 colnames(Hypy.post1)[colnames(Hypy.post1)=="Row"] <- "Line"
@@ -37,23 +30,12 @@ colnames(last22)[colnames(last22)=="X..13C.....VPDB."] <- "X.13C...VPDB."
 colnames(last22)[colnames(last22)=="X..15...........R."] <- "X.15......R."
 colnames(last22)[colnames(last22)=="X...Line"] <- "Line"
 
-#str(last22)
+
 
 
 merged.Hypypost<-rbind(Hypy.post,Hypy.post1,last22)
 
 
-#rest of sample weights are in Hy py 17.08.18 (already included in cals 04.04)
-
-#HERE you add the next spreadsheets (raw)
-
-
-#to combine all the spreadsheets use rbind (because all the spreadsheets have the same vatiables, if not use merge)
-#Hypyrawcombined<-rbind(firstrun,secondrun,thirdrun,fourthrun,fifthrun,sixthrun)
-
-#maybe merge all original files by identifier and then do next section
-
-#setwd("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Hypy/")
 
 
 colnames(merged.Hypypost)[colnames(merged.Hypypost)=="X.13C...VPDB."] <- "d13CpostHypy"
@@ -75,23 +57,6 @@ Hypyrawcombined.1<-subset(Hypyrawcombined.1,Identifier!="LOC"& Identifier!="HOC"
 Hypyrawcombined.1$Identifier<- as.numeric(as.character(Hypyrawcombined.1$Identifier))
 
 
-#Hypyrawcombined.2<-merge(Hypyrawcombined.1,agedepth,by="Identifier") ###Losing some samples bc agedepth do not include them!: 32, 98,150,156,157,158,159,160
-
-#colnames(Hypyrawcombined.2)[colnames(Hypyrawcombined.2)=="Real.depth"] <- "Depth"
-
-#dim(Hypyrawcombined.2)
-
-
-
-
-
-
-#This has pre and post merged
-#prepluspost<-merge(Hypyrawcombined.1,rawsubsetted,by="Identifier")
-#prepluspost2<-merge(Hypyrawcombined.1,rawsubsetted.1,by="Identifier",all=TRUE)
-
-#rawsubsetted<-read.csv(here("rawsubsetted.csv"),na.strings=c("NA","#DIV/0!",""))
-
 rawsubsetted<-read.csv("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis Sections/PhD/rawsubsetted.csv")
 prepluspost3<-merge(Hypyrawcombined.1,rawsubsetted,by="Identifier")
 
@@ -101,11 +66,7 @@ merge_both <- prepluspost3%>%
         group_by(Identifier) %>% 
         summarize(av_d13C = mean(d13C),av_C=mean(X.C.1),av_Cpost=mean(X.C.1postHypy),av_d13Cpost=mean(d13CpostHypy))
 
-#prepluspost.subsetted<-subset(prepluspost,Identifier!="LOC"& Identifier!="HOC"& Identifier!="Flush"& Identifier!="Blank"& Identifier!="Taipan"& Identifier!="177_off"& Identifier!="Sorghum")
 
-#rawsubsetted.1<-subset(rawsubsetted,Ampl..44>1000 & Ampl..44<30000)
-
-#now we have a data frame with pre and post info, now we use the calculations
 dim(prepluspost)
 dim(prepluspost.subsetted)
 
@@ -145,60 +106,9 @@ raw3<-mutate(raw3,Corrected=(((BlackCarbon.Perc/av_C)/1.02)-0.004)*av_C)
 
 
 raw3$Identifier<-as.numeric(raw3$Identifier)
-#agedepth$Identifier<-as.numeric(agedepth$Identifier)
 
-#blackcarbon<-ggplot(raw3, aes(x=Corrected,y=Identifier))+geom_point(size=2.5) + theme_bw() + theme(axis.text=element_text(size=12),
-#axis.title=element_text(size=12,face="bold"))
-
-#print(blackcarbon)
-
-#str(raw3)
-
-#dim(raw3)
-#str(raw3)
-
-###with age
-
-#merge with age-depth model
-#ages.april.hypy<-read.table("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Radiocarbon/Bacon_runs/SAN8_2019_2/SAN8_2019_2_31_ages.txt",skip=1)
-
-#colnames(ages.april.hypy)<-c("Depth","max","min","median","mean")
-
-#merge csv with ea with txt file with ages
 merged.hypy.ages <- left_join(raw3,agedepth2)
 
-#colnames(merged.hypy.ages)[colnames(merged.hypy.ages)=="Real.depth"] <- "Depth"
-
-#merged.hypy.ages2<-merge(merged.hypy.ages,ages.april.hypy, by="Depth")
-
-#merged.hypy.ages2<- merged.hypy.ages2 %>% rename(median.x=median)
-
-#value34<-subset(merged.hypy.ages2,Identifier=="34")
-
-#blackcarbon.age2<-ggplot(merged.hypy.ages, aes(x=Corrected,y=median))+geom_point(size=2.5) + theme_bw() + theme(axis.text=element_text(size=12),
-#axis.title=element_text(size=12,face="bold"))
-
-#print(blackcarbon.age2)
-
-
-#blackcarbon.age3<-ggplot(merged.hypy.ages, aes(x=Corrected,y=median))+ xlab("% pyrogenic carbon")+ ylab("Calibrated date (BP)")+geom_point()+ geom_path()+ theme_bw()  +scale_y_reverse(breaks=seq(0, 32000, by=2500))+ theme(axis.text=element_text(size=12),
-#axis.title=element_text(size=12,face="bold"))
-
-#print(blackcarbon.age3)
-
-#######
-
-#ages.hypy<-subset(merged.datamass4, select=c(Identifier,median))
-
-#merged.data.Hypy <- merge(ages.hypy, raw3, by="Identifier")
-#dim(merged.data.Hypy)
-
-#blackcarbon.age<-ggplot(merged.data.Hypy, aes(x=Corrected,y=median))+geom_point(size=2.5) + theme_bw() + theme(axis.text=element_text(size=12),
-#axis.title=element_text(size=12,face="bold"))
-
-#print(blackcarbon.age)
-
-#Need to merge with actual EA spreadsheets to include %C and D13C before and after Hypy
 
 
 ###Correction for isotopic values/taken from other file
@@ -209,9 +119,6 @@ tbl.corre.d13c2<-merged.hypy.ages%>%
 
 #colnames(Hypyrawcombined.2)[colnames(Hypyrawcombined.2)=="Real.depth"] <- "Depth"
 
-
-
-#tbl.correc.d13C<-select(tbl.corre.d13c2,averaged.C,averaged.d13C,X.C.1postHypy,d13CpostHypy,Depth,Identifier.x)
 
 colnames(tbl.corre.d13c2)[colnames(tbl.corre.d13c2)=="av_C"] <- "CT"
 colnames(tbl.corre.d13c2)[colnames(tbl.corre.d13c2)=="av_d13C"] <- "dT"
@@ -285,42 +192,7 @@ stats3<-merge(stats2,merged.hypy.ages)
 stats4<-stats3[,1:26]
 #print(stats2)
 
-# Save data frame (quantiles)
-#write.csv(stats, file='/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Hypy/d13corr2.csv',row.names = F) 
 
-
-###after correction (refer to file D13C-correction-SAN)
-#d13cHypycorr<-read.csv('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Hypy/d13corr.csv',na.strings=c("NA","#DIV/0!",""))
-
-#d13cHypycorr2<-read.csv('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Hypy/d13corr2.csv',na.strings=c("NA","#DIV/0!",""))
-
-
-#merged.hypy.ages3<-merged.hypy.ages2[-39,]
-
-#d13cHypycorr2<-merge(tbl.corre.d13c2,d13cHypycorr2,by="row.names")
-
-#d13cHypycorr2<-mutate(d13cHypycorr2,veg= ((med.result + 17.4125)/ -2.8805))
-
-#d13cHypycorr2<-mutate(d13cHypycorr2, ratio=(exp(veg)))
-
-
-
-
-
-#graph.ratio<-ggplot(d13cHypycorr2, aes(x=ratio,y=median))+geom_point(size=2)+ xlab("Total Arboreal:Poaceae")+ ylab("Calibrated date (BP)")+ theme_bw()+ scale_y_reverse(breaks=seq(0, 32000, by=2500)) + theme(axis.text=element_text(size=12),axis.title=element_text(size=12,face="bold"))
-
-#print(graph.ratio)
-
-#graph.corrected<-ggplot(d13cHypycorr2, aes(x=med.result,y=median))+geom_point(size=2) + xlab("Residue d13C")+ ylab("Calibrated date (BP)")+ theme_bw()+ scale_y_reverse(breaks=seq(0, 32000, by=2500)) + theme(axis.text=element_text(size=12),axis.title=element_text(size=12,face="bold"))
-
-#print(graph.corrected)
-
-#dim(d13cHypycorr2)
-
-
-#Hypy processed
-
-#Hypy<-read.csv('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Hypy/Copy of HyPyCalcs_Rainy_modified.csv',na.strings=c("NA","#DIV/0!",""),skip=1)
 
 
 #Hypy.selected<-select(Hypy,Identifier,Corrected..Wurster.et.al..2012.)
@@ -345,29 +217,7 @@ Hypy.selected5<-Hypy.selected4%>%
 dim(Hypy.selected5)
 Hypy.selecna<-Hypy.selected5%>%
         filter(is.na(PyCxMAR))
-#Hypy.selected3<-merge(merged.datamass4,Hypy,by="Identifier")
-#merged.datamass4 is defined later in a chunk, it has the bulk density, MAR, sed rate. Need to add more points to the original database
-#Hypy.selected2<-mutate(Hypy.selected2,PyCxMAR=(MAR*(Corrected)/100)*1000)
-#Hypy.selected2<-subset(Hypy.selected2,Identifier!=177)
 
-#plot(Hypy.selected2$Corrected,Hypy.selected2$mean)
-
-#PyCxMAR.graph<-ggplot(Hypy.selected4,aes(x=PyCxMAR,y=mean.x))+geom_point(size=2) + xlab("Pyc Mass accumulation rate")+ ylab("Calibrated date (BP)")+ theme_bw()+ scale_y_reverse(breaks=seq(0, 32000, by=2500)) + scale_x_continuous(breaks=seq(0,1,by=0.1))+ theme(axis.text=element_text(size=12),axis.title=element_text(size=12,face="bold"))
-
-#summary(Hypy.selected4$PyCxMAR)
-
-
-#high_pyc<-subset(Hypy.selected4,PyCxMAR > 2)
-
-#print(PyCxMAR.graph)
-
-#merged.data.Hypy <- merge(replacement_depths_itrax, Hypy_for_R_Dec_18, by="Identifier")
-
-
-#plot(merged.data.Hypy$`Real depth`,merged.data.Hypy$`Corrected (Wurster et al. 2012)`,ylim=c(0,3))
-#axis(side=1,at=seq(20,45,70))
-#plot(merged.data.Hypy$`Real depth`,merged.data.Hypy$`d13c pre Hypy`)
-#lot(merged.data.Hypy$`Real depth`,merged.data.Hypy$`d13 post hyoy`)
 
 ####Together
 

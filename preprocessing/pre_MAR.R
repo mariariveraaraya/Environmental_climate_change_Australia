@@ -7,7 +7,7 @@ library(gridExtra)
 library(plotly)
 
 
-source('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/preprocessing/pre_age_model.R')
+source('preprocessing/pre_age_model.R')
 
 
 bulk <- read.csv(here("experiments","exp_EA","data","bulk density 04 11 18 master cleaned.csv"))
@@ -147,28 +147,11 @@ egg::ggarrange(bulk_gr,water_gr,heights = c(0.5,0.5))
 
 
 
-###NEED AGES!
-
-#agedepth<-read.csv(here("agedepth6.csv"),na.strings=c("NA","#DIV/0!",""))
-
-#agedepth<-read.csv('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD-thesis-VC/agedepth6.csv')
-
-#agedepth$Identifier<- as.numeric(as.character(agedepth$Identifier))
-
-#merge csv with bulk density with txt file with ages
-#merged.datamass <- left_join(bulk7, agedepth)#######original has bulk5!!!!!!!!
-
-#merged.datamass <- right_join(bulk7, agedepth2)#######original has bulk5!!!!!!!!
 
 merged.datamass<-bulk7 %>% right_join(correctdepths_1)%>%
         right_join(ages_final_ITRAX2)#######original has bulk5!!!!!!!!
 
-#calculate age between samples, but it returns an error if run just like below
-#merged.datamass2<-mutate(merged.datamass,yearbetsamples=mean[-1] - mean[-length(mean)])
 
-#include an ifelse with the value of mean age in the first row, but IT NEEDS TO BE CHANGED accordingly
-
-#merged.datamass2<-mutate(merged.datamass,yearbetsamples=ifelse(mean==4181, (999), (mean[-1] - mean[-length(mean)])))
 
 merged.datamass2<-mutate(merged.datamass,yearbetsamples=ifelse(mean==242, (999), (mean[-1] - mean[-length(mean)])))
 
@@ -183,8 +166,6 @@ merged.datamass4<-mutate(merged.datamass4,sed.rate.inv=(1/sedrate))
 
 MAR_2<-merged.datamass4%>%
         mutate(MAR_2=MAR/1000)
-#plot(merged.datamass4$sed.rate.inv~merged.datamass4$mean)
-#plot(merged.datamass4$sedrate.mm~merged.datamass4$mean)
 sed_rate<-ggplot(merged.datamass4, aes(x=median,y=sedrate.mm))+geom_line() +  scale_x_continuous(breaks = seq(0, 32500, by = 2500)) + scale_y_continuous(breaks = seq(0,4, by = 0.1))+ ggtitle("")+ labs(x= expression(bold(delta^13)),y = "Sedimentation rate (mm/yr)")+theme_bw() + xlab("Age (cal kyr BP)")+ theme(axis.text.x=element_text(size=12),axis.title.x=element_text(size=12,face="bold"),axis.title.y = element_text(size=12,face="bold"))
 
 
@@ -196,9 +177,3 @@ MAR_3
 
 ggplotly(MAR)
 
-#ggplotly(sed_rate)
-
-
-
-####End of mass accumulation rate calculations
-#setwd("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD-thesis-VC/writeup")

@@ -61,15 +61,7 @@ compare_org2<-compare_org2[1:7,]
 
 setwd('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD-thesis-VC/experiments/exp_radiocarbon/data')
 
-##This calls the files and makes a list with them....for some reason Cr tube file 1 do have same column names
-#Pick the elements that you are interested in first!
 
-#files <- (Sys.glob("*.csv"))
-
-#filenames <- list.files("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/ITRAX/Raw files", pattern="*.csv", full.names=TRUE)
-#ldf <- map_df(filenames, read.csv, stringsAsFactors = FALSE)
-
-#str(temp)
 temp = list.files(pattern="*.txt")
 
 myfun <- function(x) {
