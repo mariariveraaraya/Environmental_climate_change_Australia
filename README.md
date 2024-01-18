@@ -1,6 +1,6 @@
 # Reconstructing the last 30,000 years of environmental history in the savannas of Northern Australia
 
-This repo contains source files for my PhD thesis titled, "Multi-proxy evidence for long environmental change in northern Australia's tropical savannas", at James Cook University. The PDF and further information can be accessed at [JCU Research Repository](https://doi.org/10.25903/nhws-h016).
+This repo contains source files for my PhD thesis titled, "Multi-proxy evidence for long environmental change in northern Australia's tropical savannas", at James Cook University. The PDF and further information can be accessed at the [JCU Research Repository](https://doi.org/10.25903/nhws-h016).
 
 The thesis followed the FAIR data principles and metadata was created according to the National Centers for Environmental Information: https://www.ncei.noaa.gov/access/paleo-search/cvterms?termId=0. Refer to the Metada.xslm file in the main branch.
 
