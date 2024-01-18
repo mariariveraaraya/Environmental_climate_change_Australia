@@ -20,10 +20,8 @@ output:
 library(knitr)
 library(here)
 library(bookdown)
-read_chunk('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/preprocessing/pre_phy.R')
+read_chunk('preprocessing/pre_phy.R')
 
-#need to include map with savannas..
-# need to include pictures of plants, examples of phytoliths with pictures, in TABLE 2 include which part of the plant was sampled, italic scientific names
 ```
 
 ```{r load-pkg-veg,echo = FALSE, cache = FALSE, include = FALSE}
@@ -122,7 +120,7 @@ Fires appear to be infrequent before the Holocene, with exceptions at 31.8 , 24.
 (ref:tb-two-veg) Phytolith morphologies of modern plants surrounding Sanamere Lagoon
 
 ```{r fig-phy,out.width = '100%', fig.align = "center", fig.cap = "(ref:fig-phy)",echo=FALSE}
-#library(knitr)
+
 include_graphics("other/Phy/Fig2_d.png")
 ```
 (ref:fig-phy) Relative abundances of phytolith morphologies and plant groups
@@ -131,14 +129,13 @@ include_graphics("other/Phy/Fig2_d.png")
 ```
 
 ```{r conc, echo=FALSE, fig.align="center", fig.cap="(ref:conc)", fig.height=4, fig.width=2, out.width='80%',include=FALSE}
-#print(plot_conc1)
+
 ```
 (ref:conc) Phytolith concentration (counts/g)
 
 ```{r pyc,out.width = '100%', fig.align = "center", fig.cap = "(ref:pyc)",echo=FALSE}
 #print(fig3)
-#include_graphics("other/Phy/Rplot.png")
-#include_graphics("other/Phy/Rplot.png")
+
 include_graphics("other/Phy/fig33.png")
 
 ```

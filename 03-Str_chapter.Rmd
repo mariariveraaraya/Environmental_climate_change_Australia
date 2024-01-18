@@ -6,12 +6,9 @@ library(bookdown)
 library(tidyverse)
 
 
-read_chunk('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/analysis/Radiocarbon/an_radiocarbon-LAPTOP-3NCFQGAR.R')
+read_chunk('analysis/Radiocarbon/an_radiocarbon-LAPTOP-3NCFQGAR.R')
 
-
-#read_chunk('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia #renamed/Sanamere/Thesis sections/PhD/analysis/Radiocarbon/an_radiocarbon-LAPTOP-3NCFQGAR.R')
-
-read_chunk('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/preprocessing/pre_age_model.R')
+read_chunk('preprocessing/pre_age_model.R')
 
 ```
 This chapter describes the coring techniques used during fieldwork, along with the sedimentology and stratigraphy of the sediment core collected, and constitutes the basis for the interpretation of the following three chapters.  
@@ -21,8 +18,6 @@ This chapter describes the coring techniques used during fieldwork, along with t
 Sanamere Lagoon was cored using a floating platform with hydraulic coring-rig, positioned at the approximate centre of the water body (11.123°S, 142.359°E) during fieldwork undertaken in July 2017. The coring location was chosen based on previous reconnaissance work carried out in May and April 2016. Although the coring technique allowed the preservation of the sediment-water interface, visual inspection of the core suggested the disturbance of this section. At the time of sampling, water depth was 1.2 m. A stainless steel tube of 100 mm diameter and 1.6 mm wall thickness was used when coring to provide a large volume of sample material. A single sediment core of 1.72 m was collected (to the point of bedrock), cut in four portions and frozen onsite immediately so it maintained stratigraphic integrity. This column represents the entire sediment sequence in the lagoon, as the corer bottomed on laterite bedrock. The four portions were stored frozen at James Cook University, Cairns until further analysis. A series of water depth measurements were taken across a transect to build a cross section of depths (Figure \@ref(fig:depth)).
 
 ```{r depth,out.width = '80%', fig.align = "center", fig.cap = "(ref:depth)",echo=FALSE}
-
-#include_graphics("Figs/SAN copy.png")
 
 include_graphics(here("Figs","depth_transect_2.png"))
 ```
@@ -90,9 +85,7 @@ In this chapter the results of only three elements (Ti, Fe, Si) are shown, for t
 The sedimentary sequence for the Sanamere Lagoon is shown in Figure \@ref(fig:fig1) and Table \@ref(tab:tb-sed). Four initial stratigraphic zones were identified based on variations in the basic physical and chemical parameters along the core. The core description will follow a sequence starting at the bottom of the core, with the last section referring to the top of the core. The first layer (172 cm - 140 cm) consists of a dark brown colour (5 YR 5/8), with carbon content below 0.5 %. Over the interval from 140 to 65 cm mineral content gradually decreases and the colour is light brown (7.5 YR 4/3). A series of three orange (7.5 YR 6/8) 1-cm thick bands are evident over 71 cm - 65 cm (Figure \@ref(fig:bands)). Beginning at 65 cm, there is a marked decrease in organic content to values of 0.5 and 1 % over 43 cm and the sediment colour changes to reddish brown (5 YR 4/4). The upper 43 cm of the core consists of black (10YR 2/1), organic (5 % - 40 % carbon) sediments, including the presence of decomposed organic debris.
 
 ```{r fig1,out.width = '100%', fig.align = "center", fig.cap = "(ref:fig1)",echo=FALSE}
-#include_graphics("other/Depth_str_chap.png")
-#include_graphics(here("other","Depth_str_chap_2.png")) #svg with the same name
-#include_graphics("Figs/fig_str.png")  #from pre_grain chunk str-sed include stratigraphy
+
 include_graphics(here("other","Depth_str_chap_5.png")) #same name in svg CHANGE!
 ```
 (ref:fig1) Stratigraphy of the Sanamere sediment core
@@ -101,7 +94,6 @@ include_graphics(here("other","Depth_str_chap_5.png")) #same name in svg CHANGE!
 
 include_graphics(here("Figs","Background","orange_bands_4.png"))
 
-#include_graphics("Figs/Background/climate_NA.png")
 ```
 (ref:bands) Orange bands in the Sanamere core
 
@@ -149,13 +141,12 @@ The Sanamere core consists of a 1.72 m continuous sediment sequence with no evid
 
 ```{r fig-ele,out.width = '80%', fig.align = "center", fig.cap = "(ref:fig-ele)",echo=FALSE}
 include_graphics(here("Figs","ele_fig.png"))
-#include_graphics("Figs/fig_str.png")  #from pre_grain chunk str-sed include stratigraphy
+
 ```
 (ref:fig-ele) Elemental counts in the Sanamere sequence
 
 ```{r fig2,echo = FALSE, eval=TRUE, include = FALSE,warning=FALSE}
 include_graphics("Figs/fig_str.png")  #from pre_grain chunk str-sed
-# x_depth from pre_ITRAX 
 ```
 
 ```{r fig-strat,echo = FALSE, eval=FALSE, include = FALSE,warning=FALSE}
