@@ -9,8 +9,6 @@ library(kableExtra)
 library(flextable)
 
 ## ---- tb-one-pre
-#dates_table<-read.csv(here("experiments", "exp_radiocarbon","data", "Compiled_Aug_19.csv"),na.strings=c("NA","#DIV/0!",""))
-#dates_table<-read.csv('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD-thesis-VC/experiments/exp_radiocarbon/data/Compiled_Aug_19_corr.csv')
 
 
 dates_table<-read.csv(here("experiments", "exp_radiocarbon","data", "Compiled_Aug_19_corr.csv"),na.strings=c("NA","#DIV/0!",""))
@@ -36,7 +34,6 @@ correctdepths$Identifier<- as.numeric(as.character(correctdepths$Identifier))
 correctdepths<-filter(correctdepths, Depth < 14 | Depth > 15.5)
 
 
-#correctdepths<-read.csv("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Bulk density/replacement depths itrax_3.csv")
 
 
 
@@ -54,19 +51,10 @@ correctdepths_1<-read.csv(here("experiments", "exp_radiocarbon","data", "replace
 
 correctdepths_1<-correctdepths_1 %>% rename(Depth=Real.depth)%>%
         filter(Depth <14 | Depth>21)
-#ages_final<-read.table("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis Sections/PhD/experiments/exp_radiocarbon/data/Bacon_runs/SAN8_2019_10/SAN8_2019_10_35_ages.txt",skip=1)
-#ages_final<-read.table("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis Sections/PhD/experiments/exp_radiocarbon/data/Bacon_runs/SAN8_2019_16/SAN8_2019_16_35_ages.txt",skip=1)
 correctdepths_1$Identifier<-as.numeric(correctdepths_1$Identifier)
 
 
 ages_final<-read.table(here("experiments","exp_radiocarbon","data","Bacon_runs","SAN8_2019_18","SAN8_2019_18_35_ages.txt",skip=1))
-
-#model_no_hypy<-dates_table%>%
- #       left_join(correctdepths,by='Identifier')%>%
-  #      select(OZCode,Conv_RC,Conv_RC_error,Depth)
-        
-
-
 
 setwd(here("experiments","exp_radiocarbon","data"))
 
@@ -79,7 +67,6 @@ myfun <- function(x) {
 
 myfiles = lapply(temp, myfun)
 
-#data55 <- rbindlist( myfiles, fill = TRUE )
 
 ### check if pollen and charcoal dates got messed up (interchange them)
 
@@ -156,7 +143,6 @@ model_ABA_mod<- all_first_table%>%
 
 #write.csv(model_ABA_mod, '/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/experiments/exp_radiocarbon/data/Bacon_runs/SAN8_2019_14/SAN8_2019_14.csv',row.names = F)
 
-#model_no_hyp$age<- as.numeric(as.character(model_no_hyp$age))
 
 all_first_table2<-all_first_table%>%
         unite("Conventional radiocarbon dates",3:4, sep=" \u00B1 ")%>%
@@ -171,25 +157,11 @@ library(flextable)
 
 tabledates<-regulartable(all_first_table2)
 tabledates2<-theme_vanilla(set_table_properties(tabledates, width=1,layout = "autofit"))
-#table8<-italic(table8,j=1)
-#word_export <- read_docx()
-#body_add_flextable(word_export, table7)
-#body_add_par(word_export, value = "")
-
-#print(word_export, target= here("data", "table_ch5_2.docx"))        
-
-#save_as_docx(tabledates2, path = here("data", "table_ch4_1.docx"))
-
 
 
 pp_rc<-all_first_table2%>%
         select(Depth,`Carbon fraction`,Pretreatment)%>%
         arrange(Depth)
-
-
-#pp_rc_t<-pp_rc%>%
- #       flextable()%>%
-  #      set_table_properties(width = 0.75,layout = "autofit")
 
 final_model<-all_first_table%>%
         filter(Pretreatment=="Hypy")%>%
@@ -239,10 +211,6 @@ table_sed2 <- table_sed%>% #changed layer rep "5", from 17  to 16
         mutate(`Depth (cm)`=c(rep("0-43",16),rep("43-65",3),rep("65-71",1),rep("71-140",4),rep("140-172",3)))%>%
         mutate(Description=c(rep("2.5 YR 4/6 Dark silty peat",16),rep("5 YR 4/4 Silty clay",3),rep("7.5 YR 4/3 thinly stratified lenses (reddish bands)",1),rep("7.5 YR 4/3 Silty clay",4),rep("5YR 5/8 Silty clay with gravel",3)))
 
-#table_str_2%>%
- #       arrange(`Depth (cm)`)%>%
-  #      knitr::kable("latex",booktabs = TRUE, caption = "(ref:tb-units)", linesep = "") %>%
-   #     kableExtra::kable_styling(position = "center", latex_options= "scale_down")
 table_str_b<-read.table("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis Sections/PhD/other/Hydro/Table_CONISS_ITRAX_2.csv",sep=",",skip=1)
 #colnames(table_str)<-c("Depth (cm)","Ti","Si","Fe","Description","Layer","Unit","Distance to base (cm)","Age range (ka cal yr BP)")
 colnames(table_str_b)<-c("Unit (cm)","Ti","Si","Fe","Description","Layer","Unit","Depth","Age range (ka cal yr BP)")
@@ -268,12 +236,6 @@ table_sed2_b <- table_sed_b%>%
         select(1:3)%>%
         distinct()
 
-
-#table_str_22 <- table_str_2%>%
- #       mutate(Layer = c(rep("5", 17), rep("4", 3),rep("3",1),rep("2",4),rep("1",3)))%>%
- #       mutate(`Depth (cm)`=c(rep("0-43",17),rep("43-65",3),rep("65-71",1),rep("71-140",4),rep("140-172",3)))%>%
- #       mutate(Description=c(rep("2.5 YR 4/6 Dark silty peat",17),rep("5 YR 4/4 Silty clay",3),rep("7.5 YR 4/3 thinly stratified lenses (reddish bands)",1),rep("7.5 YR 4/3 Silty clay",4),rep("5YR 5/8 Silty clay with gravel",3)))
-
 table_str_22 <- table_str_b2%>%
         mutate(Layer = c(rep("4", 17), rep("3", 3),rep("2",4),rep("1",3)))%>%
         mutate(`Depth (cm)`=c(rep("0-43",17),rep("43-65",3),rep("65-140",4),rep("140-172",3)))%>%
@@ -286,15 +248,6 @@ library(officer)
 
 tablesed<-regulartable(sed)
 tablesed2<-theme_vanilla(set_table_properties(tablesed, width=1,layout = "autofit"))
-#table8<-italic(table8,j=1)
-#word_export <- read_docx()
-#body_add_flextable(word_export, table7)
-#body_add_par(word_export, value = "")
-
-#print(word_export, target= here("data", "table_ch5_2.docx"))        
-
-#save_as_docx(tablesed2, path = here("data", "table_ch5_2_2.docx"))
-
 
 
 table5<-table_str_22
@@ -306,26 +259,12 @@ autecology_2<-autecology%>%
 
 ## ---- tb-one
 
-#all_first_table2%>%
- #       arrange(`Depth`)%>%
-  #      knitr::kable(booktabs = TRUE, caption = "(ref:tb2-sub)", linesep = "") %>%
-   #     kableExtra::kable_styling(position = "center", latex_options= "hold_position")
 
-#CORRECT!:
 all_first_table2%>%
        arrange(`Depth`)%>%
         knitr::kable("latex",booktabs = TRUE, caption = "(ref:tb-one)", linesep = "")%>%
         kableExtra::kable_styling(position = "center", latex_options= "scale_down")
         #as_image(all_first_table2)
-#setwd('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD-thesis-VC/writeup')
-        
-#all_first_table3<-all_first_table2%>%
- #               arrange(`Depth`)%>%
-  #              knitr::kable("latex",booktabs = TRUE, caption = "(ref:tb-one)", linesep = "")
-
-#all_first_table22<-flextable(all_first_table2)
-#all_first_table22<-autofit(all_first_table22)
-#all_first_table22
 
 ## ---- tb- two
 
@@ -398,12 +337,7 @@ cbbPalette <- c("#000000", "#2A00E5", "#56B4E9", "#1FC910", "#69D3A4", "#FFFF00"
 
 tabledatesb<-regulartable(ff3)
 tabledatesb2<-theme_vanilla(set_table_properties(tabledatesb, width=1,layout = "autofit"))
-#table8<-italic(table8,j=1)
-#word_export <- read_docx()
-#body_add_flextable(word_export, table7)
-#body_add_par(word_export, value = "")
-
-#print(word_export, target= here("data", "table_ch5_2.docx"))        
+       
 
 save_as_docx(tabledatesb2, path = here("data", "table_ch4_2.docx"))
 #scale_colour_manual(values=cbbPalette)
@@ -427,12 +361,6 @@ e33<-ggplot(all3)+ geom_errorbar(data = all3, aes(x=Depth,ymin = to_95/1000, yma
         coord_flip()
 e44<-e33 + guides(color = guide_legend(override.aes = list(size=5))) + scale_fill_manual(name="",breaks=c("size"),labels=c(" "))
 
-#png(
- #       "Figs/dates_RC_2.png", 
-  #      width = 14, 
-   #     height = 8, 
-    #    res = 300,
-     #   units = "in")
 
 
 e44<-e33 + guides(color = guide_legend(override.aes = list(size=5))) + scale_fill_manual(name="",breaks=c("size"),labels=c(" "))
@@ -467,19 +395,13 @@ print(sed_rate)
 
 ## ---- tb-hy
 
-#hydro_1%>%
- #       arrange(`Depth (cm)`)%>%
-  #      knitr::kable("latex",booktabs = TRUE, caption = "(ref:tb-hy)", linesep = "") %>%
-   #     kableExtra::kable_styling(position = "center", latex_options= "scale_down")
+
 
 final_model%>%
         arrange(`Depth (cm)`)%>%
         knitr::kable("latex",booktabs = TRUE, caption = "(ref:tb-hy)", linesep = "") %>%
         kableExtra::kable_styling(position = "center", latex_options= "scale_down")
 
-#final_model2<-flextable(final_model)
-#final_model2<-autofit(final_model2)
-#final_model2
 
 ## ---- tb-units
 
@@ -489,17 +411,6 @@ table_str_22%>%
         kableExtra::kable_styling(position = "center", latex_options= "scale_down")%>%
         column_spec(2, width = "4cm")%>%
         collapse_rows(columns = 1:3, valign = "middle")
-# library(officer)      
-
-#table6<-regulartable(table5)
-#word_export <- read_docx()
-#body_add_flextable(word_export, table6)
-#body_add_par(word_export, value = "")
-
-#print(word_export, target= here("data", "table_ch5.docx"))        
-
-#kable(table_str_22) %>%
- #       collapse_rows(columns = 1:3, valign = "top")
 
 
 ## ---- tb-units2
@@ -511,21 +422,7 @@ table_sed2_b%>%
         knitr::kable("latex",booktabs = T, align = "c",caption = "(ref:tb-sed)") %>%
         kableExtra::kable_styling(position = "center")
 
-
-#table_str_223<-flextable(table_str_22)
-#table_str_223<-autofit(table_str_223)
-#table_str_223<-merge_v(table_str_223,j=c("Layer","Unit"))
-#table_str_223
-
-#table_sed2%>%
-#       knitr::kable("latex", booktabs = T, align = "c",caption = "(ref:tb-sed)") %>%
-#      kableExtra::kable_styling(position = "center", latex_options= "scale_down")%>%
-#     collapse_rows(columns = 1:3, valign = "middle")
-
 ## ---- tb-aut
-#autecology_2%>%
- #       knitr::kable("latex",booktabs = TRUE, caption = "(ref:tb-aut)", linesep = "")%>% #"latex"
-  #      kableExtra::column_spec(4, width = "10em")
 
 autecology_2%>%
         knitr::kable("latex", caption = "(ref:tb-aut)", linesep = "", longtable=TRUE)%>%
@@ -537,32 +434,8 @@ autecology_2%>%
         kableExtra::column_spec(5, width = "3cm")%>%
         landscape()
 
-#library(officer)      
 
-#table7<-regulartable(autecology_2)
-#table8<-theme_vanilla(set_table_properties(table7, width=1,layout = "autofit"))
-#table8<-italic(table8,j=1)
-#word_export <- read_docx()
-#body_add_flextable(word_export, table7)
-#body_add_par(word_export, value = "")
-
-#print(word_export, target= here("data", "table_ch5_2.docx"))        
-
-#save_as_docx(table8, path = here("data", "table_ch5_2.docx"))
-
-
-
-#library(pander)
-#pandoc.table(autecology_2, split.cells = c("20%", "10%", "10%","50%", "10%"))
-#pandoc.table(autecology_2, split.cells = 5,5,10,50,10)
-
-#tb<-pandoc.table(autecology_2, split.cells = c(10,10,5,20,10))
-
-#Pandoc.brew(tb,format="pdf")
-#Pandoc.brew(text = tb, output = tempfile(), convert = 'pdf')
-#?Pandoc.brew
-
-setwd('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD')
+setwd('here()')
 
 
 Element<- c("Aluminum", "Silicon", "Phosphorous", "Sulfur", "Chloride","Potassium", "Calcium", "Scandium","Titanium","Vanadium","Chromium","Manganese", "Iron", "Nickel","Copper", "Zinc", "Bromide","Rubidium", "Strontium", "Yttrium", "Zirconium","Palladium", "Barium", "Lanthanum", "Cerium", "Lead") 
