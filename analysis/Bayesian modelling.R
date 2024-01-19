@@ -6,14 +6,9 @@ library(rbacon)
 library(readxl)
 library(here)
 
-##Oxcal better for individual samples, maybe all with Oxcal????
-###Bacon with hypy dates (March 2019)
-#setwd("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Radiocarbon")
 
 setwd(here("experiments", "exp_radiocarbon","data"))
 
-
-#age_model_Jan20<-read.csv(here("experiments", "exp_radiocarbon","data", "EA.180614.csv"),na.strings=c("NA","#DIV/0!",""))
 
 
 #All hypy dates 
@@ -41,8 +36,6 @@ Bacon(core="SAN8_2019_20",d.min=0,depths.file = TRUE) #hypy
 
 ## ---- models
 
-#had to change because of Vlad update
-#BO<-read.table('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/experiments/exp_radiocarbon/data/Bacon_runs/SAN8_2019_15/SAN8_2019_15_35_ages.txt',header=T)
 
 BO<-read.table('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/experiments/exp_radiocarbon/data/Bacon_runs/SAN8_2019_19/SAN8_2019_19_35_ages.txt',header=T)
 
@@ -50,25 +43,12 @@ BO<-read.table('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Aust
 app2<-rep(c("Bulk organics"), times=173)
 
 BO$fraction<-app2
-#plot(BO$depth,BO$median)
 
-#model1<- ggplot(BO,aes(x=depth,y=median,ymin= min,ymax=max))+geom_()+ xlab("Depth (cm)")+ ylab("Calibrated date (BP)")+
-#        scale_x_continuous(breaks=c(3,6,12,43,67,76,82,90,105,114,137,146,162))+scale_y_continuous(breaks=seq(0, 32000, by=5000))+theme_bw()+xlab("Depth (cm)")
-
-#model1
 
 e10<-ggplot(BO)+ geom_errorbar(data = BO, aes(x=depth,ymin = min, ymax = max,width=1.5))+ xlab("Depth (cm)")+ ylab("Calibrated date (BP)")+
         scale_x_continuous(breaks=c(2,6,12,22,32,41,55,65, 75, 85,95,105,115,125,135,144,160,170))+scale_y_continuous(breaks=seq(0, 32000, by=2000))+theme_bw()# scale_colour_manual(values=cbbPalette)
 
 
-#e10 +geom_point(aes(x=146, y=13850), colour="blue", size=5)
-
-#e10 +geom_errorbar(aes(x=146, ymin=13745,ymax=14007), colour="blue", size=3) +geom_errorbar(aes(x=6, ymin=5045,ymax=5305), colour="blue", size=3)+
-        
- #       geom_errorbar(aes(x=42, ymin=6755,ymax=7240), colour="red", size=3) 
-        
-        #scale_colour_manual(name="Carbon",
-#                                                                                                  values=c("Pollen"="red", "Cellulose"= "blue"))
 Fraction<-c("Pollen", "Pollen", "Cellulose")
 
 depth<-c(146,6,42)
@@ -94,29 +74,15 @@ e10 +geom_errorbar(data=frac_BO,aes(x=depth, ymin=min,ymax=max, group= Fraction,
         theme( axis.title.x = element_text(size=14, face="bold"),
                axis.title.y = element_text(size=14, face="bold"))+scale_colour_manual(values=cbbPalette2)
 
-#theme#e10+ guides(color = guide_legend(override.aes = list(size=2))) + scale_fill_manual(name="",breaks=c("size"),labels=c(" "))
-
-#Bacon(core="SAN8_2019_16",cc=3,d.min=0,d.max=172)
-
-#Bacon(core="SAN8_2019_16",cc=3,d.min=0,d.max=172,depths.file = TRUE)
-
-#Bacon(core="SAN8_2019_17",cc=3,d.min=0,d.max=172)
 
 
 app<-rep(c("hypy"), times=173)#172 #1698
 
-#hypy<-read.table('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/experiments/exp_radiocarbon/data/Bacon_runs/SAN8_2019_17/SAN8_2019_17_35_ages.txt',header=T)
-
-hypy<-read.table('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/experiments/exp_radiocarbon/data/Bacon_runs/SAN8_2019_18/SAN8_2019_18_35_ages.txt',header=T)
+hypy<-read.table('experiments/exp_radiocarbon/data/Bacon_runs/SAN8_2019_18/SAN8_2019_18_35_ages.txt',header=T)
 
 
 hypy$fraction<-app
-#plot(BO$depth,BO$median)
 
-#model1<- ggplot(BO,aes(x=depth,y=median,ymin= min,ymax=max))+geom_()+ xlab("Depth (cm)")+ ylab("Calibrated date (BP)")+
-#scale_x_continuous(breaks=c(3,6,12,43,67,76,82,90,105,114,137,146,162))+scale_y_continuous(breaks=seq(0, 32000, by=5000))+theme_bw()+xlab("Depth (cm)")
-
-#model1
 
 e11<-ggplot(hypy)+ geom_errorbar(data = hypy, aes(y=depth,xmin = min/1000, xmax = max/1000,width=1.5))+ ylab("Depth (cm)")+ xlab("Calibrated date (ka)")+
         scale_y_reverse(breaks=c(6,12, 32,41,55,65, 75, 85,95,105,125,144,158,170))+scale_x_continuous(breaks=seq(0, 36, by=2))+theme_bw()
@@ -137,26 +103,13 @@ efinal<- e12 +
         theme( axis.title.x = element_text(size=14, face="bold"),
                axis.title.y = element_text(size=14, face="bold"),axis.text = element_text(size=14))
 print(efinal)
-dev.off()
-#png(filename="C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/other/Hydro/Second_draft/model_hypy.png",width=800,height=540)
-#plot(efinal)
-#dev.off()
 
-#e10 +geom_point(aes(x=146, y=13850), colour="blue", size=5)
 
-#e11 +geom_errorbar(aes(x=3, ymin=12742,ymax=13370), colour="blue", size=3) +geom_errorbar(aes(x=6, ymin=4243,ymax=5040), colour="blue", size=5)+
-        
- #       geom_errorbar(aes(x=6, ymin=4297,ymax=4845), colour="red", size=3) + geom_errorbar(aes(x=82, ymin=12666,ymax=13036), colour="blue", size=3) +
-  #       annotate("text",x=135,y=14000,label="Charcoal > 63 um",size=5,color="blue") + annotate("text",x=135,y=12000,label="Charcoal > 250 um",size=5,color="red")
 
 
 Fraction<-c("Charcoal > 63 um", "Charcoal > 63 um","Charcoal > 63 um", "Charcoal > 250 um", "hypy","hypy","Bulk organics (peroxide + ABA)", "Bulk organics (peroxide + ABA)")
 
 depth<-c(3,6,82,6,23, 105,114,150)
-
-#min<-c(12742,4243,12666,4297,7720,21775, 27445,29603)
-
-#max<-c(13370,5040,13036,4845,8153,22512,28619,30645)
 
 
 
@@ -170,13 +123,6 @@ model_Hypy_2$Fraction <- gsub('SPAC', 'hypy', model_Hypy_2$Fraction)
 
 
 hypy_22<-rbind(frac,model_Hypy_2)
-
-
-
-#e11 +geom_errorbar(data=hypy_22,aes(x=depth, ymin=min,ymax=max, group= Fraction,colour=Fraction), width=5,size=1.5) +
- #        theme( axis.title.x = element_text(size=14, face="bold"),
-  #              axis.title.y = element_text(size=14, face="bold"))+scale_colour_manual(values=cbbPalette2)
-
 
 both_models<-rbind(hypy_22,frac_BO)
 both_models2<-rbind(hypy,BO)
@@ -217,7 +163,6 @@ dev.off()
 print(rc_figure)
 
 ## ---- models3
-#setwd('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD')
 
 #Hypy dates plus some other organics
 Bacon(core="SAN8_2019_8",cc=3)
@@ -239,7 +184,7 @@ Bacon("SAN8_2019_3", cc=3)
 
 ### 2 charcoal and 1 bulk organics dates already not included here!
 
-chronos<-read.csv('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/experiments/exp_radiocarbon/data/Bacon_runs/SAN8_2019_8/SAN8_2019_8.csv')
+chronos<-read.csv('experiments/exp_radiocarbon/data/Bacon_runs/SAN8_2019_8/SAN8_2019_8.csv')
 
 
 #Taking out first SPAC date
@@ -252,7 +197,6 @@ chronos3<-filter(chronos, labID!="OZX767", labID!="OZX768", labID!="OZX769", lab
 
 chronos4<-filter(chronos, labID!="OZX767", labID!="OZX768", labID!="OZX769", labID!="OZY132",labID!="OZY422", labID!="OZY419",labID!="OZY418",labID!="OZY131",labID!="OZX765",labID!="OZX766")
 
-#write.csv(chronos4,file='C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/experiments/exp_radiocarbon/data/Bacon_runs/SAN8_2019_10/SAN8_2019_10.csv',row.names = FALSE)
 
 chronos5<-chronos4%>%
         select(1)%>%
@@ -264,22 +208,6 @@ Bacon("SAN8_2019_10",cc=3,depths.file=TRUE)
 
 Bacon("SAN8_2019_10",cc=3,depths.file=TRUE)
 
-
-#colnames(dates_table)[colnames(dates_table)=="OZCode"] <- "labID"
-
-#agedepth(yr.res=50, d.res=50, d.by=10)
-
-#Bacon(ask=FALSE, coredir=tempfile())
-#agedepth()
-
-
-#accrate.depth(55,set = get("info"))
-
-#accrate.age.ghost(set = get("info"))
-
-#chronos4_merge<-left_join(chronos4,dates_table,by="labID")
-
-#setwd("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Radiocarbon")
 
 ###New model was done on Oct 23th 2019
 
@@ -369,13 +297,6 @@ oxcal.org22<-select(oxcal.org,Code,RCA,RCA.error,Real.depth)
 comb.hypy.org<-rbind(oxcal.hypy,oxcal.org)##uncalibrated
 
 
-
-
-
-
-
-
-
 ###Compare bulk organics/hypy#calibrated#these files are the outputs from Oxcal
 
 compare_org<-read.csv("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Radiocarbon/Oxcal/SANOrg101U22.csv")
@@ -452,15 +373,5 @@ g12<-g11+geom_point(aes(shape=Fraction,size=6))
 
 g13<-g12+guides(size=FALSE)
 
-g13
-#g10<-ggplot(compare.all)+ geom_errorbar(data = compare_mean2, aes(x=z,y=mean_2,ymin = to_95_4, ymax = from_95_4, group=Fraction,color=Fraction,width = 6))+ xlab("Depth (cm)")+ ylab("Calibrated date (BP)")+
-       # scale_x_continuous(breaks=c(6,41,65,135,144,160))+scale_y_continuous(breaks=seq(0, 32000, by=5000))+theme_bw()
 
 print(g11)
-
-#install.packages("tabulizer")
-#install.packages("rJava")
-#library(rJava)
-#library(tabulizer)
-#Sys.getenv("JAVA_HOME")
-
