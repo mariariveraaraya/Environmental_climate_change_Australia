@@ -8,57 +8,13 @@ library(rioja)
 library(here)
 
 
-# san_final_model10 is the final file used in the ITRAX models
-# organic2  includes Mo ratio
+source('preprocessing/pre_age_model.R')
 
-# line 299 graph itrax just with depth maybe stratigraphy chp
-
-#read_chunk('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/preprocessing/pre_age_model.R')
-
-source('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/preprocessing/pre_age_model.R')
-
-#correctdepths<-read.csv("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Bulk density/replacement depths itrax_3.csv")
-
-#correctdepths<-correctdepths %>% rename(Depth=Real.depth)
-
-#ages_final_ITRAX<-read.table("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis Sections/PhD/experiments/exp_radiocarbon/data/Bacon_runs/SAN8_2019_10/SAN8_2019_10_35_ages.txt",skip=1)
-#colnames(ages_final_ITRAX)<-c("Depth","max","min","median","mean")
-
-#colnames(ages_final)<-c("Depth","max","min","median","mean")
-#agedepth<-merge(correctdepths,ages_final,by="Depth")###FILE TO BE USED TO MERGE WITH OTHERS except itrax
-
-#ages_final_ITRAX$Identifier<- as.numeric(as.character(agedepth$Identifier))
-
-
-#agedepth2<-mutate(agedepth,Identifier=ifelse(Depth==47, (75), Identifier))
-#agedepth2<-mutate(agedepth2,Identifier=ifelse(Depth==48, (75.5), Identifier))
-##Analyse ITRAX raw files
-#Until now elements were plotted and filtered (low counts and of interest), need to compare and merged with ICP, but they are looking a lot better
 
 setwd('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/ITRAX/Raw files')
 
-##This calls the files and makes a list with them....for some reason Cr tube file 1 do have same column names
-#Pick the elements that you are interested in first!
-
-#files <- (Sys.glob("*.csv"))
-
-#filenames <- list.files("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/ITRAX/Raw files", pattern="*.csv", full.names=TRUE)
-#ldf <- map_df(filenames, read.csv, stringsAsFactors = FALSE)
-
-#str(temp)
 temp = list.files(path="C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/ITRAX/Raw files", pattern="*.csv")
 myfiles = lapply(temp, read.csv)
-
-#data5 <- rbindlist( myfiles, fill = TRUE )
-
-#?list.files
-##Call each data frame separately (starting with Cr tube)
-#Structure: 1.convert to numeric 2. assign depths using row numbers 3. filter counts 4. plot
-#this was done per section and not in loop as the first section was different
-#TiSinorall uses the four sections, TiSinor 3 for Cr tube
-#Monorall uses the four sections, TiSinor 3 for Mo tube
-#select_final10 merges both tubes
-#san_final_model10 merges with ages and creates csv file
 
 
 cr1<-as.data.frame(myfiles[[1]])
@@ -279,18 +235,6 @@ san_final_model4<-select_final%>%
         merge(correctdepths,all=T)%>%
         filter(NorFe>0.5,Depth.mm>238 & Depth.mm<751)
 
-
-
-
-
-
-
-
-#sum<-sapply(TiSinor, function(x) summary(x)$coefficients[2,1:2])
-
-#summary(TiSinor$Al)
-
-############USE?????THis is with all sections, taking put everything less than 60 mm
 
 Tiallall<-rbind(cleanb,cleancr3,cleancr2,cleancr44)
 

@@ -18,15 +18,13 @@ The region has an abundance of internationally and nationally important natural 
 
 ```{r fig-cli-CP,out.width = '80%', fig.align = "center", fig.cap = "(ref:fig-cli-CP)",echo=FALSE}
 
-#include_graphics("Figs/SAN copy.png")
-
 include_graphics(here("Figs","Background","CP_rainfall.png"))
 ```
 (ref:fig-cli-CP) Average annual rainfall, 2012–2016. Source: Bureau of Meteorology Australian Water Availability Project gridded monthly data. Plotted by the Queensland Government Department of Environment and Science. Available at https://www.stateoftheenvironment.des.qld.gov.au/climate/climate-observations/annual-rainfall
 
 ```{r fig-veg-CP,out.width = '80%', fig.align = "center", fig.cap = "(ref:fig-veg-CP)",echo=FALSE}
 
-#include_graphics("Figs/SAN copy.png")
+
 
 include_graphics(here("Figs","Background","CP_veg.png"))
 ```
@@ -41,7 +39,7 @@ Although most lakes dry out in this region during the dry season (May - November
 Sanamere is in an enclosed basin surrounded by higher elevation land, with the highest point (57 m a.s.l.) to the north-northeast of the lagoon, close to the current Bamaga Road [@geoscience-australiaSRTMSecImage2015]. Based on topography, Sanamere Lagoon has an approximate catchment area of 9 km^2^, with the lowest overflow point at ~17 m a.s.l. to the west of the lagoon (Figure \@ref(fig:fig-DEM-SAN)).
 
 ```{r fig-jardine,out.width = '100%', fig.align = "center", fig.cap = "(ref:fig-jardine)",echo=FALSE, include=TRUE}
-#library(knitr)
+
 library(here)
 include_graphics(here("Figs", "Background","Jardine.png"))#C:\Users\Maria Jose Rivera\OneDrive - James Cook University\Australia renamed\Sanamere\Thesis sections\PhD\Figs\vegetation C:\Users\Maria Jose Rivera\OneDrive - James Cook University\Australia renamed\Sanamere\Thesis sections\PhD\Figs\vegetation
 ```
@@ -49,16 +47,12 @@ include_graphics(here("Figs", "Background","Jardine.png"))#C:\Users\Maria Jose R
 
 ```{r fig-wind-SAN,out.width = '80%', fig.align = "center", fig.cap = "(ref:fig-wind-SAN)",echo=FALSE}
 
-#include_graphics("Figs/SAN copy.png")
-
-#include_graphics(here("Figs","Background","wind_SAN.png"))
 include_graphics(here("Figs","Background","horn_wind.png"))
 ```
 (ref:fig-wind-SAN) Average wind direction and speed 1995-2017, measured at 9 am in in January (left) and July (right), from Horn Island weather station.
 
 ```{r fig-water-SAN,out.width = '80%', fig.align = "center", fig.cap = "(ref:fig-water-SAN)",echo=FALSE}
 
-#include_graphics("Figs/SAN copy.png")
 
 include_graphics(here("Figs","Background","water_SAN.png"))
 ```
@@ -66,7 +60,6 @@ include_graphics(here("Figs","Background","water_SAN.png"))
 
 ```{r fig-DEM-SAN,out.width = '80%', fig.align = "center", fig.cap = "(ref:fig-DEM-SAN)",echo=FALSE}
 
-#include_graphics("Figs/SAN copy.png")
 
 include_graphics(here("Figs","Background","DEM_SAN.png"))
 ```
@@ -82,27 +75,24 @@ The vegetation around the lake edge is dominated by sedgeland, open-heaths, dwar
 
 ```{r fig-veg-SAN,out.width = '80%', fig.align = "center", fig.cap = "(ref:fig-veg-SAN)",echo=FALSE}
 
-#include_graphics("Figs/SAN copy.png")
 
-#include_graphics(here("Figs","Background","SAN_veg.png"))
 ```
 (ref:fig-veg-SAN) Vegetation surrounding Sanamere Lagoon
 
 
 ```{r fig-veg2,out.width = '100%', fig.align = "center", fig.cap = "(ref:fig-veg2)",echo=FALSE, include=TRUE}
-#library(knitr)
 include_graphics(here("Figs","vegetation","0_waterline.png")) #C:\Users\Maria Jose Rivera\OneDrive - James Cook University\Australia renamed\Sanamere\Thesis sections\PhD\Figs\vegetation C:\Users\Maria Jose Rivera\OneDrive - James Cook University\Australia renamed\Sanamere\Thesis sections\PhD\Figs\vegetation
 ```
 (ref:fig-veg2) Vegetation at the Sanamere Lagoon waterline, comprised of sedges and scattered Pandanus
 
 ```{r fig-veg1,out.width = '100%', fig.align = "center", fig.cap = "(ref:fig-veg1)",echo=FALSE,include=TRUE}
-#library(knitr)
+
 include_graphics(here("Figs","vegetation","0_50_heathland.png"))
 ```
 (ref:fig-veg1) Open heathland vegetation 50 metres from the waterline
 
 ```{r fig-veg3,out.width = '100%', fig.align = "center", fig.cap = "(ref:fig-veg3)",echo=FALSE,include=TRUE}
-#library(knitr)
+
 include_graphics(here("Figs","vegetation","400_Eucalyptus.png"))
 
 ```
@@ -121,7 +111,7 @@ In the 18-year period spanning 2000-2019, the area immediately surrounding Sanam
 Most fires occur each year during the later dry season (July - November). During April to July, fires in northern Australia are associated with lower air temperatures, higher moisture content, burning of smaller areas and may leave unburnt patches. Fires occurring between August and November are typically high intensity, and burn large areas [@evansDeliveringEffectiveSavanna2020]. Australian Aboriginal people have used fire to manage the landscape for millennia. However, in the early 20th century the removal of Indigenous people to missions might have reduced intensive management of fire regime [cookeCultureEcologyEconomy2009].
 
 ```{r fig-fire-SAN,out.width = '100%', fig.align = "center", fig.cap = "(ref:fig-fire-SAN)",echo=FALSE,include=TRUE}
-#library(knitr)
+
 include_graphics(here("Figs","Background","fire_SAN.png"))
 
 ```
@@ -139,7 +129,7 @@ The monsoon system is divisible into three spatial components: the Northwest Mon
 
 ```{r fig-modern,out.width = '80%', fig.align = "center", fig.cap = "(ref:fig-modern)",echo=FALSE}
 
-#include_graphics(here("Figs","Background","climate_BOM.png"))
+
 
 include_graphics(here("Figs","Background","climate_NA.png"))
 ```
@@ -153,11 +143,6 @@ As mentioned in chapter 1, the past climate information available for northern A
 
 ```{r fig-climate, out.width = '100%',fig.align = "center", fig.cap = "(ref:fig-climate)",echo=FALSE}
 
-#out.width = '100%'
-#include_graphics("Figs/SAN copy.png")
-
-#include_graphics(here("Figs","Background","climate_sites.png")) 
-#include_graphics(here("Figs","Background","climate_all.png"))#change qgis, aus project, climate_all
 include_graphics(here("Figs","Background","cleaned_climate_2.png")) #cleaned_climate in aus
 
 ```
@@ -166,33 +151,13 @@ include_graphics(here("Figs","Background","cleaned_climate_2.png")) #cleaned_cli
 ```{r tb-sites,echo = FALSE, eval=TRUE, include = TRUE,warning=FALSE}
 library(tidyverse)
 library(kableExtra)
-#library(flextable)
-#climate<-read.csv(here("data","climate_sites_7.csv"))
+
 
 climate<-read.csv(here("data","cleaned_final.csv"))
 
 
 climate<-climate%>%
         rename("Length (ka)"= 'Length', "Number"="X")
-#library(officer)      
-
-#table77<-regulartable(climate)
-#table88<-theme_vanilla(set_table_properties(table77, width=1,layout = "autofit"))
-#table8<-italic(table8,j=1)
-#word_export <- read_docx()
-#body_add_flextable(word_export, table7)
-#body_add_par(word_export, value = "")
-
-#print(word_export, target= here("data", "table_ch5_2.docx"))        
-
-#save_as_docx(table88, path = here("data", "table_ch2_1.docx"))
-#pp_rc_t<-climate%>%
- #       flextable()%>%
-  #      set_table_properties(width = 0.75,layout = "autofit")
-#climate%>%
- #       knitr::kable("latex", booktabs = TRUE,
- # caption = "(ref:tb-sites)")%>%
-  #      kableExtra::kable_styling(position = "center", latex_options = "scale_down")
 
 climate%>%
         knitr::kable("latex",booktabs = TRUE,
@@ -202,10 +167,6 @@ climate%>%
 kableExtra::column_spec(7, width = "5cm")%>%
         landscape()
 
-#pp_rc_t<-climate%>%
- #       flextable()%>%
-  #      set_table_properties(width = 0.75,layout = "autofit")
-#print(pp_rc_t)
 ```
 (ref:tb-sites) Latitude, longitude and length of the past environmental records discussed in the text
 
@@ -265,11 +226,6 @@ In a regional context, several studies have highlighted the impact of changing s
 
 ```{r fig-sea3,out.width = '80%', fig.align = "center", fig.cap = "(ref:fig-sea3)",echo=FALSE}
 
-#include_graphics("Figs/SAN copy.png")
-
-#include_graphics(here("Figs","Background","climate_sites.png")) 
-#include_graphics(here("Figs","Background","climate_all.png"))#change qgis, aus project, climate_all
-include_graphics(here("other","Background","sahul_2.png")) #cleaned_climate in aus
 
 ```
 (ref:fig-sea3) Sahul ~ 20 ka. Yellow line denotes modern coastline. Source: http://sahultime.monash.edu.au/
@@ -277,10 +233,6 @@ include_graphics(here("other","Background","sahul_2.png")) #cleaned_climate in a
 
 ```{r fig-sea2,out.width = '80%', fig.align = "center", fig.cap = "(ref:fig-sea2)",echo=FALSE}
 
-#include_graphics("Figs/SAN copy.png")
-
-#include_graphics(here("Figs","Background","climate_sites.png")) 
-#include_graphics(here("Figs","Background","climate_all.png"))#change qgis, aus project, climate_all
 include_graphics(here("Figs","Background","sea_level_3.png")) # graphs_August_20.R ,cleaned_climate in aus
 
 ```
@@ -295,10 +247,6 @@ From ~ 12 ka important changes in sea level are recorded based on studies from L
 Additional studies from stalagmites in southeast Indonesia [@griffithsIncreasingAustralianIndonesian2009] also support the idea that lowered sea level had a large effect on IPWP hydroclimate from the LGM to 9.5 ka, when the Sunda Shelf was nearly flooded. Moreover, the early Holocene intensification of monsoon precipitation was driven by sea-level rise, which increased the supply of moisture to the Indonesian archipelago. Monsoon precipitation intensified even more rapidly from 11 ka to 7 ka, when the Indonesian continental shelf was flooded by global sea-level rise.
 ```{r fig-sea,out.width = '100%', out.height= '100%',fig.align = "center", fig.cap = "(ref:fig-sea)",echo=FALSE}
 
-#include_graphics("Figs/SAN copy.png")
-
-#include_graphics(here("Figs","Background","climate_sites.png")) 
-#include_graphics(here("Figs","Background","climate_all.png"))#change qgis, aus project, climate_all
 include_graphics(here("Figs","Background","sea_level_thesis_2.png")) #cleaned_climate in aus
 
 ```
@@ -317,20 +265,7 @@ gc<-data.frame(Date, Event, Reference)
 gc<-gc%>%
         rename('Date (ka)'='Date')
 
-#library(officer)      
-
-#table777<-regulartable(gc)
-#table888<-theme_vanilla(set_table_properties(table777, width=1,layout = "autofit"))
-#table8<-italic(table8,j=1)
-#word_export <- read_docx()
-#body_add_flextable(word_export, table7)
-#body_add_par(word_export, value = "")
-
-#print(word_export, target= here("data", "table_ch5_2.docx"))        
-
-#save_as_docx(table888, path = here("data", "table_ch2_2.docx"))
-
-gc%>%
+     gc%>%
         knitr::kable("latex", booktabs = TRUE,
   caption = "(ref:gc)")%>%
         kableExtra::kable_styling(position = "center")
@@ -345,10 +280,6 @@ The re-establishment of vegetation caused by rising sea levels during the mid Ho
 
 ```{r fig-geo,out.width = '100%', out.height='100%', fig.align = "center", fig.cap = "(ref:fig-geo)",echo=FALSE}
 
-#include_graphics("Figs/SAN copy.png")
-
-#include_graphics(here("Figs","Background","climate_sites.png")) 
-#include_graphics(here("Figs","Background","climate_all.png"))#change qgis, aus project, climate_all
 include_graphics(here("Figs","Background","paleo_geo.png"))
 
 ```
@@ -429,19 +360,6 @@ sal<-c("< 0.2", "< 0.9", "0.8 - 1.8", "1.8 - 9.0")
 tab_diat<-data.frame(desc,sal)%>%
         rename("Description"="desc", "Salinity (%)" = "sal")
 
-#library(officer)      
-
-#table7777<-regulartable(tab_diat)
-#table8888<-theme_vanilla(set_table_properties(table7777, width=0.5,layout = "autofit"))
-#table8<-italic(table8,j=1)
-#word_export <- read_docx()
-#body_add_flextable(word_export, table7)
-#body_add_par(word_export, value = "")
-
-#print(word_export, target= here("data", "table_ch5_2.docx"))        
-
-#save_as_docx(table8888, path = here("data", "table_ch2_3.docx"))
-
 tab_diat%>%
         knitr::kable("latex", booktabs = TRUE,
   caption = "(ref:tb-diat)")%>%
@@ -461,18 +379,6 @@ pH<- c("optimal occurrence at pH < 5.5", "mainly occurring at pH < 7", "mainly o
 
 tab_diat2<-data.frame(cla,pH)%>%
         rename("Classification"="cla")
-
-#library(officer)      
-
-#table77777<-regulartable(tab_diat2)
-#table88888<-theme_vanilla(set_table_properties(table77777, width=1,layout = "autofit"))
-#table8<-italic(table8,j=1)
-#word_export <- read_docx()
-#body_add_flextable(word_export, table7)
-#body_add_par(word_export, value = "")
-
-#print(word_export, target= here("data", "table_ch5_2.docx"))        
-#save_as_docx(table88888, path = here("data", "table_ch2_4.docx"))
 
 
 tab_diat2%>%

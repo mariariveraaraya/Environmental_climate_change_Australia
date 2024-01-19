@@ -14,17 +14,6 @@ library(kableExtra)
 st<-read.csv(here("data","statement_contribution_2.csv"))
 
 st2<- st %>%rename('Nature of assistance'= Nature.of.Assistance, 'Names of contributors'= Names..Titles..if.relevant..and.Affiliations.of.Co.Contributors)
-
-#ft_merge <- flextable( st2, cwidth = 2 )
-#ft_merge <- merge_v( ft_merge,j = 1 )
-#ft_merge
-
-#table100<-regulartable(table5)
-#word_export2 <- read_docx()
-#body_add_flextable(word_export2, ft_merge)
-#body_add_par(word_export2, value = "")
-
-#print(word_export2, target= here("data", "table_contri.docx"))
 ```
 
 ```{r st3, echo = FALSE, cache = FALSE, include = TRUE, eval=TRUE, warning=FALSE}

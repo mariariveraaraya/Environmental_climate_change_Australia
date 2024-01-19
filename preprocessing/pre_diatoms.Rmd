@@ -10,11 +10,6 @@ editor_options:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-Important comments:
-- See line 260 for clustering analysis
-- diat_merge10 final diatom diagram
-- Great webpage http://symbiont.ansp.org/dntf/gallery.php?g=Caloneis&r=A-C
-
 
 ```{r diatoms preprocessing}
 
@@ -44,7 +39,7 @@ autecology_2%>%
 
 # Load of age model
 
-source('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/preprocessing/pre_age_model.R')
+source('preprocessing/pre_age_model.R')
 
 # Load of diatom counts
 
@@ -53,7 +48,7 @@ diatoms_photo<-read.csv(here("experiments", "exp_diatoms","data", "Photos_silica
 
 # Concentration/ counts of diatoms
 
-conc<-read.csv("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Diatoms spicules/Concentration diatoms.csv")
+conc<-read.csv("here("experiments", "exp_diatoms","data"," Concentration diatoms.csv"))
 
 diatoms_counts$Species2 <- paste(diatoms_counts$Genus,diatoms_counts$Species)
 
@@ -317,8 +312,7 @@ arnold_rel_abundance_wide_div_2<-species_diversity_1%>%
         select(-d_g_wet_sed)%>%
         mutate(median=median/1000)
 
-#arnold_rel_abundance_wide_div_3<-arnold_rel_abundance_wide_div_2%>%
- #       select(median)
+
 
 png(
   "other/Hydro/my_species_plot.png", 
@@ -383,8 +377,7 @@ a<-gg_diat%>%
     strip.background = element_blank()
   )
 
-# voodoo that makes it so that facet labels can overlap
-# https://stackoverflow.com/questions/49740215/ggplot-facet-grid-label-cut-off
+
 species_plot_grob <- ggplotGrob(a)
 for(i in which(grepl("strip-t", species_plot_grob$layout$name))){
   species_plot_grob$grobs[[i]]$layout$clip <- "off"

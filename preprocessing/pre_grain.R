@@ -5,16 +5,16 @@ library(here)
 library(tidyverse)
 library(janitor)
 
-source('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/preprocessing/pre_age_model.R')
-source('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/preprocessing/pre_ITRAX.R')
-source('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/preprocessing/pre_MAR.R')
-source('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/preprocessing/pre_EA.R')
-source('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/preprocessing/pre_diatoms.Rmd')
-source('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/preprocessing/pre_Hypy.Rmd')
+source('preprocessing/pre_age_model.R')
+source('preprocessing/pre_ITRAX.R')
+source('preprocessing/pre_MAR.R')
+source('preprocessing/pre_EA.R')
+source('preprocessing/pre_diatoms.Rmd')
+source('preprocessing/pre_Hypy.Rmd')
 
 # Grain size analyses and plots (at the end)
 
-setwd('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD')
+#setwd('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD')
 
 
 sand_silt_clay<-read.csv(here("experiments", "exp_grain","data", "GS_04_10_19_av_sand.csv"),na.strings=c("NA","#DIV/0!",""))
@@ -40,23 +40,8 @@ old2<-old%>%
 
 old2$Sample.Name <- gsub(" - ", "", old2$Sample.Name)
 
-#final$Sample.Name <- gsub("-Average", "", final$Sample.Name)
-#final$Sample.Name <- gsub("SAN", "", final$Sample.Name)
-#final$Sample.Name <- gsub("", "", final$Sample.Name)
-#final$Sample.Name <- gsub(" trial", "", final$Sample.Name)
-#final$Sample.Name <- gsub(" March 19", "", final$Sample.Name)
-#final$Sample.Name <- gsub("-2", "", final$Sample.Name)
-#final$Sample.Name <- gsub(" 2", "", final$Sample.Name)
-
-
-
-#Change 10FD to surface
-
-#final$Sample.Name[10:13]=0
-
-##Take out "trial"
-#final10<-final[-c(9,14),]
 str(sand_silt_clay)
+
 #COnvert sample name to numeric/Identifier
 sand_silt_clay$Sample.Name<- as.numeric(as.character(sand_silt_clay$Sample.Name))
 
@@ -77,22 +62,6 @@ sand_silt_clay2<-sand_silt_clay%>%
         mutate(Sand2=ifelse(Total!=(100),(Sand+(100-Total)),Sand))%>%
         select(1,2,3,6)
 
-
-#agedepth2<-mutate(agedepth2,Identifier=ifelse(Depth==48, (75.5), Identifier))
-#?summarize
-#?aggregate
-#?group_by
-#summarize used after groupby
-
-
-###########MAYBE include correction to account for more sand than silt in 107-112....135 178 etc
-#Include a correction given the inconsistent use of NaOH to eliminate silica....samples <70 have overcounting of Si in the Silt fraction
-#so they were included in the clay fraction
-#final22<-final2%>%
-        #mutate(Siltclay=Silt + Clay)%>%
-        #mutate(Silt2=ifelse(Identifier<70,(Siltclay*0.1), Silt))%>%
-        #mutate(Clay2=ifelse(Identifier<70,(Siltclay*0.9), Clay))
-
 #Transform data so it can be used in strat.plots or area graphs
 sand_silt_clay3<-gather(sand_silt_clay2,Fraction,Percentage,-Identifier)
 
@@ -100,7 +69,6 @@ graphpp<-ggplot(sand_silt_clay3, aes(x=Identifier,y=Percentage,fill=Fraction))+ 
                                                                                                                                   axis.title=element_text(size=12,face="bold"))
 print(graphpp)
 
-###See changes in sizes need to put first row as header! then gather?
 
 sizes<-read.csv(here("experiments", "exp_grain","data", "GS_04_10_19_av.csv"),na.strings=c("NA","#DIV/0!",""))
 
@@ -111,17 +79,10 @@ colnames(sizes_10)[1] <- "Sample.Name"
 colnames(sizes_10)[2] <- "d.0.1"       
 colnames(sizes_10)[3] <- "d.0.5"
 colnames(sizes_10)[4] <- "d.0.9"
-#colnames(sizes) <- as.character(unlist(sizes[1,]))
-#sizes = sizes[-1, ]
+
 
 
 sizes_10$Sample.Name <- gsub("- Average", "", sizes_10$Sample.Name)
-
-
-#sizes2<-sizes_10%>%
- #       select((1:4))
-#sizes3<-colSums(sizes,6:73)
-
 
 sizes_10$Sample.Name<- as.numeric(as.character(sizes_10$Sample.Name))
 sizes_10$sumdepth <- rowSums(sizes_10[c(1:42),c(6:70)])
@@ -184,12 +145,6 @@ fixed_age<-ggplot(sizes4, aes(x=median,y=Percentage,color=Fraction))+ geom_point
 
 fixed_age
 ggplotly(fixed_age)
-##do not know sizes
-#sizes4<-filter(sizes3,Identifier!='NA')
-
-
-#d_70_f<-sizes3%>%
-      #  filter(sumdepth34<100)
 
 
 d50<-ggplot(sizes3, aes(x=Depth,y=d.0.5))+ geom_point() 
@@ -228,12 +183,6 @@ d_sand<-ggplot(sizes3, aes(x=median,y=sizes3$sumdepth_sand))+ geom_point()+geom_
         
 d_sand
 
-#d_70_all<-ggplot(sizes3, aes(x=median,y=sqrt(sizes3$sumdepth34)))+ geom_point() 
-#d_70_all
-
-#d_70_all<-ggplot(sizes3, aes(x=median,y=log(sizes3$sumdepth34)))+ geom_point() 
-#d_70_all
-
 
 old3<-old2%>%
         select(-(2:25))%>%
@@ -241,18 +190,7 @@ old3<-old2%>%
 
 colnames(old3)[1] <- "Sample.Name"
 colnames(old3)[2] <- "d.0.1"       
-#colnames(old3)[3] <- "d.0.5"
-#colnames(old3)[4] <- "d.0.9"
-#colnames(sizes) <- as.character(unlist(sizes[1,]))
-#sizes = sizes[-1, ]
 
-
-#old3$Sample.Name <- gsub("- Average", "", old3$Sample.Name)
-
-
-#sizes2<-old3%>%
-#       select((1:4))
-#sizes3<-colSums(sizes,6:73)
 
 old4<-old3%>%
         filter(Sample.Name!=150,Sample.Name!=57,Sample.Name!=54)%>%
@@ -297,19 +235,6 @@ ds<-ggplot(dss, aes(x=Depth,y=Percentage,color=Size))+ geom_point() +ylab("Size"
                                                                                                                                            
 ds
 ggplotly(ds)
-#####AGES
-
-#ages5<-read.table("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Radiocarbon/Bacon_runs/SAN8_2019_4/SAN8_2019_4_35_ages.txt",skip=1)
-
-#colnames(ages5)<-c("Depth","max","min","median","mean")
-
-#correctdepths<-read.csv("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Bulk density/replacement depths itrax_3.csv")
-
-#correctdepths<-correctdepths %>% rename(Depth=Real.depth)
-
-#agedepth<-merge(correctdepths,ages5,by="Depth")###FILE TO BE USED TO MERGE WITH OTHERS except itrax
-
-#agedepth$Identifier<- as.numeric(as.character(agedepth$Identifier))
 
 grain_age<-left_join(sand_silt_clay3,agedepth2)
 grain_age2<-filter(grain_age,mean!="NA")
@@ -325,32 +250,6 @@ percentages
 percentages3
 ggplotly(percentages2)
 
-#check<-grain_age2%>%
- #       group_by(Identifier)%>%
-  #      mutate(Total=sum(Percentage))
-        
-
-#library(ghibli)
-##problem with area graph and switching axis????
-
-
-#graphpp<-ggplot(grain_age2, aes(x=median,y=Percentage,fill=Fraction))+ theme_bw()+ theme(panel.border = element_blank()) +geom_area() +  scale_fill_ghibli_d("MarnieMedium1")+ theme(axis.text=element_text(size=12),
-#                                                                                                                                           axis.title=element_text(size=12,face="bold"))+ylab("Percentage of the total (%)")+xlab("Age (cal yr BP)")+  scale_x_continuous(breaks = seq(0, 32500, by = 5000))
-#print(graphpp)
-#str(grain_age2)
-#str(sand_silt_clay3)
-
-#graphpp2<-ggplot(grain_age2, aes(x=median,y=Percentage,fill=Fraction))+ theme_bw()+ theme(panel.border = element_blank()) +geom_area() +  scale_fill_ghibli_d("MarnieMedium1")+ theme(axis.text=element_text(size=18),
- #                                                                                                                                                                                    axis.title=element_text(size=18,face="bold"))+ylab("Percentage of the total (%)")+xlab("Age (cal yr BP)")+  scale_x_continuous(breaks = seq(0, 32500, by = 5000))
-
-#graphpp2
-
-
-#graphpp22<-ggplot(grain_age2, aes(x=Depth,y=Percentage,fill=Fraction))+ theme_bw()+ theme(panel.border = element_blank()) +geom_area() +  scale_fill_ghibli_d("MarnieMedium1")+ theme(axis.text=element_text(size=18),
-  #                                                                                                                                                                                    axis.title=element_text(size=18,face="bold"))+ylab("Percentage of the total (%)")+xlab("Age (cal yr BP)")+  scale_x_continuous(breaks = seq(0, 175, by = 10))
-
-#graphpp22
-
 
 graphpp333<-ggplot(grain_age2, aes(x=median,y=Percentage,fill=Fraction))+ geom_area()+ theme_bw()+ theme(panel.border = element_blank()) + theme(axis.text=element_text(size=12),
                                                                                                                                                                                      axis.title=element_text(size=12,face="bold"))+ylab("Percentage of the total (%)")+xlab("Age (cal yr BP)")+  scale_x_continuous(breaks = seq(0, 32500, by = 2500))
@@ -362,7 +261,6 @@ tog_per<-sand_silt_clay2%>%
         left_join(agedepth2)%>%
         select(median,Clay,Silt,Sand2)
 
-#graph_toge<-ggplot(together, aes(x=median,y=Percentage,fill=Fraction))+ geom_point()+ theme_bw()
 
 clay<-filter(grain_age2,Fraction=="Clay")
 graph_clay<-ggplot(clay, aes(x=median,y=Percentage))+ geom_point()+ theme_bw()+ theme(panel.border = element_blank()) + theme(axis.text=element_text(size=12),
@@ -372,17 +270,6 @@ print(graph_clay)
 
 sed<-select(merged.datamass4,median,sedrate.mm,Water,Dry_bulk_density2,Depth)
 
-#together<-san_final_model10%>%
- #       select('median',NorTi,NorAl,NorSi,NorSr,NorRb,NorCa,NorFe)%>%
-  #      left_join(sed)%>%
-   #     left_join(sizes4)%>%
-        #left_join(grain_age2)%>%
-    #    select(median,Depth,NorTi,NorSi,NorAl,NorSr,NorRb,NorCa,Water,Dry_bulk_density2,Fraction,Percentage,sedrate.mm)
-        
-
-
-#%>%
- #       left_join(EA2)
 sizes33<-sizes3%>%
         select(Identifier,d.0.5)
 
@@ -411,7 +298,6 @@ correlation<-together%>%
 cor2<-cor(correlation)
 corrplot(cor2,method = "number")
 
-#tog_per has the wrong percentages clay = 7 um
 
 geochemical<-together%>%
         select(median,averaged.C,averaged.N,averaged.C.N,averaged.d13C,averaged.d15N)%>%
@@ -704,9 +590,7 @@ egg::ggarrange(plot6, plot7,plot2, plot3,heights = c(0.25, 0.25,0.25,0.25))
 b<-cowplot::plot_grid(plot7, plot5, align = "v", ncol = 1, rel_heights = c(0.5,0.5))
 
 
-########WORKS!
 egg::ggarrange(plot8,plot5,plot6,heights = c(0.33,0.33,0.33))
-#cowplot::plot_grid(plot5, plot6,plot8, align = "v", ncol = 1, rel_heights = c(0.33,0.33,0.33))
 
 
 egg::ggarrange(plot9,plot2,plot3,heights = c(0.33,0.33,0.33))
@@ -912,8 +796,6 @@ plot_conc <- together %>%
         ylab("Diatom conc") +
         theme_minimal()+
         scale_x_continuous(breaks=seq(0, 32.5, by=2))
-#theme(axis.title.x = element_blank(),
- # axis.text.x = element_blank())
 
 plot_conc
 
@@ -1197,7 +1079,7 @@ graphpp333<-ggplot(plot_frac, aes(x=Percentage,y=Depth,fill=Fraction))+ geom_are
 
 
 graphpp333   
-aa<-read.table("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/other/table1.txt",header=TRUE,sep = ",")
+aa<-read.table("other/table1.txt",header=TRUE,sep = ",")
 
 
 plot_frac_time <- together %>%
@@ -1329,7 +1211,6 @@ plot_conc_2 <- together %>%
 ggplotly(plot_conc_2)
 plot_conc_2
 
-#cowplot::plot_grid(plot_sed, plot_C, plot_N, plot_d13C,plot_d15N, align = "h", nrow = 1, rel_heights = c(0.2,0.2,0.2,0.2,0.2))
 
 grid.arrange(plot_sed, plot_C, plot_d13C,ncol=3,nrow=1)
 
@@ -1346,7 +1227,6 @@ p3<-grid.arrange(plot_sed_time,plot_05_time,plot_frac_time,ncol=3,nrow=1)
 ggsave("fig2.png",p3,width=8,height=10,path=here("Figs"))
 
 
-#grid.arrange(plot_sed, plot_C, plot_d13C,plot_05, ncol=4,nrow=1)
 plot_C_N <- together %>%
         select(Depth, averaged.C.N) %>%
         na.omit() %>%
@@ -1661,11 +1541,6 @@ ggsave("pyc_geom.png",fig8,path=here("Figs"),width=8,height=5)
 ggsave("geom.png",fig8b,path=here("Figs"),width=6,height=5)
 
 
-#png(filename="C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/other/log.png",width=250,height=700)
-#plot(log_C_N)
-#dev.off()
-#?png
-
 
 plot_C_N <- together %>%
         select(Depth, averaged.C.N) %>%
@@ -1706,7 +1581,7 @@ grid.arrange(plot_N_log, plot_C_log,ncol=2,nrow=1)
 grid.arrange(plot_sed,plot_frac, ncol=2,nrow=1)
 plot_05
 
-table_str<-read.table("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis Sections/PhD/other/Hydro/Table_CONISS_ITRAX.csv",sep=",",skip=1)
+table_str<-read.table("other/Hydro/Table_CONISS_ITRAX.csv",sep=",",skip=1)
 colnames(table_str)<-c("Depth (cm)","Ti","Si","Fe","Description","Layer","Unit","Distance to base (cm)","Age range (ka cal yr BP)")
 
 table_str_2<-select(table_str,-"Fe",-"Ti",-"Si")

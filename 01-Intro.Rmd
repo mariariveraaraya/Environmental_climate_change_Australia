@@ -25,8 +25,6 @@ This project focuses on understanding the environmental history and geochronolog
 
 ```{r fig-CP,out.width = '80%', fig.align = "center", fig.cap = "(ref:fig-CP)",echo=FALSE}
 
-#include_graphics("Figs/SAN copy.png")
-
 include_graphics(here("Figs","SAN_map_25_04_20.png"))
 ```
 (ref:fig-CP) Sanamere Lagoon in Cape York Peninsula
@@ -86,7 +84,6 @@ Research questions:
 
 ```{r savanna, warning = FALSE,echo = FALSE, cache = FALSE, include = TRUE, out.width = '80%', fig.align = "center", fig.cap = "(ref:savanna)"}
 library(knitr)
-#include_graphics(here("Figs","Savannas_AU.png"))
 include_graphics(here("Figs","savannas_wet_AU.png"))
 
 ```
@@ -102,7 +99,6 @@ library(tidyverse)
 library(DiagrammeRsvg)
 library(rsvg)
 
-#In the final chapter, I present a summary of the conclusions of this thesis.
 
 graph<-grViz("digraph flowchart {
       # node definitions with substituted label text
@@ -115,12 +111,6 @@ graph<-grViz("digraph flowchart {
         tab6 [label = '@@6']
       tab7 [label = '@@7']
       tab8 [label = '@@8']
-
-      # edge definitions with the node IDs
-    #  tab1 -> tab2;
-     # tab2 -> tab3;
-      #tab2 -> tab4 -> tab5
-
       tab1 -> tab2;
         
         tab1 -> tab3;
@@ -156,10 +146,6 @@ graph<-grViz("digraph {
         tab6 [label = '@@6']
       tab7 [label = '@@7']
     
-      # edge definitions with the node IDs
-    #  tab1 -> tab2;
-     # tab2 -> tab3;
-      #tab2 -> tab4 -> tab5
 
       tab1 -> tab2;
         
@@ -184,22 +170,11 @@ tab6 -> tab7
       [7]: 'Chapter 7: Synthesis of results and future research directions'
       ")
 
-
-#grViz(graph) %>%
- #   export_svg %>% charToRaw %>% rsvg_png("graph.png")
-
-#export_graph(graph,
-#file_name = "flow.png",
-#file_type = "png")
-#export_svg(graph) %>%
-# charToRaw () %>% rsvg () %>% png::writePNG(here("Figs","graphs_2.png"))
-
 ```
 
 ```{r flow1, echo = FALSE, cache = FALSE, include = TRUE, out.width = '80%', fig.align = "center", fig.cap = "(ref:flow1)"}
 library(knitr)
-#include_graphics(here("graphs.png"))
-#include_graphics(here("Figs","graphs.png"))
+
 include_graphics(here("Figs","graphs_2.png"))
 
 ```

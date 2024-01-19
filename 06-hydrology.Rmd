@@ -4,52 +4,8 @@
 library(knitr)
 library(here)
 library(bookdown)
-read_chunk('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/analysis/Radiocarbon/an_radiocarbon-LAPTOP-3NCFQGAR.R')
+read_chunk('analysis/Radiocarbon/an_radiocarbon-LAPTOP-3NCFQGAR.R')
 
-#JUNE
-# ADD diatoms photos and more references Cassie email
-
-#MAYBE DELETE tb-one-pre from here so it can compile
-# source of OM and interpretation ************
-#Include this when discussing late Holocene, SAN is more like an exception: This seems to be part of a broader east to west trend, with a shift to
-#moister and more stable conditions (i.e. more permanent
-#water) at ca 2700 cal. BP in southeast Cape York Peninsula
-#(Stephens and Head 1995), after 2500 cal. BP in the Torres
-#Strait (Rowe 2007), after 1000 cal. BP on Groote Eylandt
-#(Schulmeister 1992), and after 1300 cal. BP at Black Springs
-#in the Kimberley (McGowan et al. 2013). However, there
-#are several notable exceptions. Witherspoon Swamp is
-#interpreted as shifting to drier not wetter conditions after
-#2000 cal. BP (Moss et al. 2012), while Three-Quarter Mile
-#Lake in northeast Cape York is interpreted as wet and stable
-#from 5000 cal. BP to the present (Luly et al. 2006).
-
-
-#IMPORTANT::: CHANGE CALONEIS AND ADD VAN DAM REFERENCE/ Taffs says caloneis is Pinnularia update!
-## where are the figures!
-#Fig 1: in PhD/Figs
-##Fig 2: pre_grain.R in preprocessing at the end and plot_frac for percentages
-##Fig 4: pre_gran, but coming form pre_ITRAX (prc) look for prcurve_ITRAX3 and so on (line 213)
-#Cor plot in pre_grain together4, m4
-# diatom in pre_diatoms.R
-# include total of samples for diatoms
-### Discussion
-
-#table with units and last figure (geochemical)
-#CO2 concentrations during LGM
-#cal BP or cal ka yr BP
-#?????sea level before 30 ka
-#?? productivity vs primary productivity
-#? include nitrogen isotopes and rainfall in discussion
-#?C:N ratios vs isotopes algae 5 to 8 vs C3 low lake productivity, little algae
-#?mention changes in fire/veg
-
-#maybe include nitrogen composition from savanna paper, photos
-#changes: new 'numbers' with new age model update agedepth2 vs ages_ITRAX can lead to slighlty diff results
-
-#read_chunk((here("analysis", "Radiocarbon", "an_radiocarbon-LAPTOP-3NCFQGAR.R")))
-#setwd("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD-thesis-VC/writeup")
-###not know why if EVAL=TRUE in chunk with ggplot knitting to word does not work
 ```
 
 ```{r load-pkg1,echo = FALSE, cache = FALSE, include = FALSE,evaluate=FALSE}
@@ -75,7 +31,6 @@ Sanamere Lagoon (11.123°S 142.359°E; 15 m asl) is located close to the norther
 
 ```{r fighydro1,out.width = '80%', fig.align = "center", fig.cap = "(ref:fighydro1)",echo=FALSE}
 
-#include_graphics("Figs/SAN copy.png")
 
 include_graphics("Figs/SAN_map_25_04_20.png")
 ```
@@ -137,7 +92,6 @@ Si counts had an increment at 28.8 cal BP, and gradually decreased until 12 cal 
 
 ```{r fighydro2,out.width = '100%', fig.align = "center", fig.cap = "(ref:fighydro2)",echo=FALSE}
 
-#include_graphics("other/Hydro/Second_draft/fig1.png")
 include_graphics("Figs/fig2.png")# from pre_grain FINAL FIG 2
 ```
 
@@ -152,18 +106,14 @@ include_graphics("Figs/fig2.png")# from pre_grain FINAL FIG 2
 
 ```{r fighydro3,out.width = '80%', fig.align = "center", fig.cap = "(ref:fighydro3)",echo=FALSE}
 
-#include_graphics("other/Hydro/Second_draft/model_hypy.png")
-#print(efinal)#from bacon SAN.R
+
 include_graphics("other/Hydro/age_model.png")
 ```
 (ref:fighydro3) Age-depth model
 
 ```{r fighydro44,out.width = '80%', fig.align = "center", fig.cap = "(ref:fighydro44)",echo=FALSE}
 
-#include_graphics("other/Hydro/Second_draft/ITRAX_coniss2.png")
-#include_graphics("cluster_graph.png")
-#include_graphics("Figs/ITRAX_clus.png")
-#cluster_graph in pre_ITRAX
+
 include_graphics("other/Hydro/ITRAX_clus.png")
 ```
 (ref:fighydro44) Hierarchical cluster analysis and dendrogram with zones throughout the sedimentary profile 
@@ -171,13 +121,13 @@ include_graphics("other/Hydro/ITRAX_clus.png")
 ```{r fighydro4,out.width = '80%', fig.align = "center", fig.cap = "(ref:fighydro4)",echo=FALSE}
 
 include_graphics("Figs/Fig2_b.png")
-#FIG 5 in pre_grain
+
 ```
 (ref:fighydro4) Elemental ratios and principal curve 
 
 ```{r fighydro56,out.width = '50%', fig.align = "center", fig.cap = "(ref:fighydro56)",echo=FALSE}
 
-#include_graphics("Figs/SAN copy.png")
+
 
 include_graphics("Figs/150_200_a_cropped.png")
 ```
@@ -195,23 +145,12 @@ include_graphics("Figs/04_03_20_fig5.png")
 
 ```{r fighydro6, fig.width=14,fig.height=8,echo=FALSE, fig.align="center", fig.cap="(ref:fighydro6)", out.width='80%'}
 
-#include_graphics("Figs/04_03_20_fig6b.png")
-#print(BAR2_merge3) #pre_diatoms.Rmd
-#include_graphics("Figs/Diat_May_1.png")
 include_graphics("other/Hydro/my_species_plot.png") #from pre_diatoms
 ```
 (ref:fighydro6) Diatom assemblage and concentration data 
 
 ```{r fighydro7,out.width = '80%', fig.align = "center", fig.cap = "(ref:fighydro7)",echo=FALSE,warning=FALSE}
 
-#include_graphics("other/Hydro/Second_draft/geom.png")
-#include_graphics("Figs/pyc_geom.png")
-#include_graphics("Figs/geom.png")
-#fig8 and fig8b from pre_grain
-#geoochemical
-
-#NEED TO REINCLUDE THIS!
-#print(geom_fig) #from pre_grain
 include_graphics("other/Hydro/geom_02_06.png")
 ```
 (ref:fighydro7) Geochemical and diatom results for the Sanamere sequence. Note that % C and % N are presented as log-transformed values. 
