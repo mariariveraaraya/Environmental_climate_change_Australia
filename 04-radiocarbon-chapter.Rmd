@@ -5,23 +5,11 @@ library(here)
 library(bookdown)
 
 
-#read_chunk('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia #renamed/Sanamere/Thesis sections/PhD/analysis/Radiocarbon/bacon SAN.R')
-
-#read_chunk('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia #renamed/Sanamere/Thesis sections/PhD/preprocessing/pre_age_model.R')
-
-read_chunk('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/analysis/Radiocarbon/an_radiocarbon-LAPTOP-3NCFQGAR.R')
-
-#Abstract; including applications for other dating methods  lessons in terms of not making equivalent assumptions on a material's nature
-#implications for tropical palaeo-research 
-#CHECK FOR CHANGES IN DATES AFTER UPDATES! include table with tested samples (Processed_2020)?, fix the text for changes in ranges and exact dates after update
+read_chunk('analysis/Radiocarbon/an_radiocarbon-LAPTOP-3NCFQGAR.R')
 
 
-#read_chunk('C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD/analysis/Radiocarbon/bacon SAN.R')
 
-# if including PyC then have to refer to something else!
-#read_chunk((here("analysis", "Radiocarbon", "an_radiocarbon-LAPTOP-3NCFQGAR.R")))
-#setwd("C:/Users/Maria Jose Rivera/OneDrive - James Cook University/Australia renamed/Sanamere/Thesis sections/PhD-thesis-VC/writeup")
-###not know why if EVAL=TRUE in chunk with ggplot knitting to word does not work
+
 ```
 
 ```{r pre,echo = FALSE, cache = FALSE, include = FALSE}
@@ -83,7 +71,6 @@ All samples were calibrated using the rbacon R package [@blaauwRbaconAgedepthMod
 
 ```{r radiocarbon1,out.width = '100%', fig.align = "center", fig.cap = "(ref:tsibble-fit-cap)",echo=FALSE}
 
-#include_graphics(here("Figs","SAN_map_25_04_20.png"))
 
 include_graphics(here("Figs","SAN_final.png"))
 
@@ -92,7 +79,6 @@ include_graphics(here("Figs","SAN_final.png"))
 
 ```{r radiocarbonmet,out.width = '100%', fig.align = "center", fig.cap = "(ref:radiocarbonmet)",echo=FALSE}
 
-#include_graphics(here("Figs","SAN_map_25_04_20.png"))
 
 include_graphics(here("other","RC cha","rad_met.png"))
 
@@ -101,7 +87,6 @@ include_graphics(here("other","RC cha","rad_met.png"))
 
 ```{r fractions,out.width = '100%', fig.align = "center", fig.cap = "(ref:fractions)",echo=FALSE}
 
-#include_graphics(here("Figs","SAN_map_25_04_20.png"))
 
 include_graphics(here("other","RC cha","fractions.png"))
 
